@@ -1,16 +1,24 @@
 <!doctype html>
 <html lang="es">
     <head>
+        <title>Ex 1</title>
         <script type="text/javascript">
             // Variable / prompt preguntar con "alerta"
             var radio = prompt("Cual es el radio de el circulo que quieres calcular el perimetro y su area")
+            //Constante no se cambia
             const pi = Math.PI
+            
             var area = pi * (radio * radio)
             var diametro = radio * 2
             var perimetro = pi * diametro
 
             // Lanza una alerta con la variable
             alert("Est son los datos del circulo con radio: " + radio + "\nAREA: " + area + "\nPERIMETRO: " + perimetro)
+            // Escribir en el archivo html
+            document.write("Est son los datos del circulo con radio: " + radio + "<br>AREA: " + area + "<br>PERIMETRO: " + perimetro)
+            // Se escribe en la consola
+            console.log("Est son los datos del circulo con radio: " + radio + "\nAREA: " + area + "\nPERIMETRO: " + perimetro)
+
         </script>
     </head>
     <body>
