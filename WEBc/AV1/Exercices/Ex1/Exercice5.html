@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            var notas = prompt("dame numeros separados por comas y t los ordeno")
+            const numerosArray = notas.split(',').map(Number);
+
+            var ordenada = numerosArray.sort(function(a, b){return a - b})
+            alert("la cadena ordenada wes " + ordenada)
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

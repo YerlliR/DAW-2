@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+
+            const date = new Date()
+            var horaActual =  date.getHours()
+            var horasAñadidas = prompt("Dime las horas que quieres añadir")
+
+            for (var i = 0; i < horasAñadidas; i++){
+                horaActual++
+                if ( horaActual == 24 ){
+                    horaActual = 0
+                }
+            }
+
+            horaActual = horaActual + ":" + date.getMinutes() + ":" + date.getSeconds()
+            alert(horaActual)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
