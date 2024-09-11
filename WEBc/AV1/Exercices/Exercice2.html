@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            var notas = prompt("Dime las nota que tienes y t digo la media (SEPARADAS POR COMAS)")
+            const numerosArray = notas.split(',').map(Number);
+
+            var suma = 0
+            for (var x = 0; x < numerosArray.length; x++ ){
+                suma = suma + numerosArray[x]
+            }
+
+            var media = suma / numerosArray.length
+
+            alert("La media es " + media)
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
