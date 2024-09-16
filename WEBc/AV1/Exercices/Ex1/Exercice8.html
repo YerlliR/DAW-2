@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            const minutos = prompt("Dime el tiempo de cada trayecto separado por comas");
+            const numerosArray = minutos.split(',').map(Number);
+
+            let minsTotales = 0;
+            for (let i = 0 ; i < numerosArray.length; i++){
+                 minsTotales = minsTotales + numerosArray[i]
+            }
+            horas = Math.trunc(minsTotales / 60)
+            mins = minsTotales % 60
+            alert(" Tu viaje ha durado " + horas + ":" + mins + " horas")
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

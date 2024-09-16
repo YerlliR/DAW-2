@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            const pal = prompt("Dime una palabra y t digo si es palíndroma");
+
+            const palabra = pal.toLowerCase();
+            const palabraRev = palabra.split('').reverse().join('');
+
+            if (palabra === palabraRev){
+                alert("La palabra es palindroma")
+            }else if (palabra !== palabraRev){
+                alert("La palabra no es palindroma")
+            }else {
+                alert("Algun error ha sucedido")
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

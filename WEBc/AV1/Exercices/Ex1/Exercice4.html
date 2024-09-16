@@ -1,14 +1,11 @@
 <!doctype html>
-    <html lang="en">
+    <html lang="es">
     <head>
         <script>
             var numeroDecimal = prompt("Dime un numero con decimales y t doy solamente el decimal")
-            var i = 0
-            for (; i < numeroDecimal; i++){
+            numeroDecimal = numeroDecimal - Math.trunc(numeroDecimal)
+            alert(numeroDecimal.toFixed(10))
 
-            }
-            numeroDecimal = numeroDecimal - i + 1
-            alert(numeroDecimal)
         </script>
     </head>
     <body>
