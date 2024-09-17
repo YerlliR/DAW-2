@@ -1,4 +1,3 @@
-/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +7,6 @@ body {
     line-height: 1.6;
 }
 
-/* Estilos del Header */
 header {
     background-color: black;
     color: white;
@@ -20,7 +18,6 @@ header h1 {
     margin: 0;
 }
 
-/* Estilos de la Navegación */
 nav {
     background-color: #0e0e0e;
     padding: 10px;
@@ -40,24 +37,55 @@ nav a:hover {
     color: #2980b9;
 }
 
-/* Estilos de las Secciones */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover > a {
+    color: #2980b9;
+}
+
 section {
     padding: 0 0;
     background-color: #fff;
 }
 
-
-/* Contenido Principal */
 .content {
     max-width: 1000px;
     margin: 0 auto;
     background-color: #fff;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
-/* Títulos */
 h2 {
     color: #34495e;
     font-size: 28px;
@@ -66,7 +94,6 @@ h2 {
     font-weight: 600;
 }
 
-/* Párrafos */
 .content p {
     font-size: 18px;
     margin-bottom: 20px;
@@ -83,7 +110,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Footer */
 footer {
     background-color: #0e0e0e;
     color: white;
@@ -94,7 +120,6 @@ footer {
     margin-top: 1rem;
 }
 
-/* Hover en los enlaces del footer */
 footer a {
     color: white;
     text-decoration: none;
@@ -104,20 +129,13 @@ footer a:hover {
     color: #2980b9;
 }
 
-
-
-
-
-/* ... (estilos existentes) ... */
-/* ... (estilos existentes) ... */
-
-/* Estilos para la sección de Libros Recomendados */
 #libros-recomendados {
     padding: 20px 20px;
 }
 
 .libros-grid {
     display: grid;
+    /* tamaño de columnas ... */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     padding: 20px 0;
@@ -129,12 +147,6 @@ footer a:hover {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.libro:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .libro-imagen {
@@ -160,10 +172,4 @@ footer a:hover {
     font-size: 14px;
     color: #555;
     line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-    .libros-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
 }

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <script>
+            let verificacion = true;
+            while (verificacion){
+
+                var cantidad = prompt("Dime el tamaño de la array")
+
+                if (!isNaN(cantidad) && cantidad.trim() !== "") {
+                    numero = parseFloat(cantidad);
+                    verificacion = false
+                } else {
+                    alert("Eso no es un número válido. Inténtalo de nuevo.");
+                }
+
+            }
+
+            verificacion = true
+
+            while (verificacion){
+                const numerosDeArray = prompt("Dime los numeros de la array separados por ,");
+                var numerosArray = numerosDeArray.split(',').map(Number);
+                if (numerosArray.length != cantidad){
+                    alert("El numero de digitos no corresponde con el numero de caracteres introducidos")
+                    console.log(numerosArray.length + " - " + cantidad)
+                }else {
+                    for (var x = 0; x < numerosArray.length; x++){
+
+                        if (!isNaN(numerosArray[x]) && numerosArray[x] != "") {
+                            numerosArray[x] = parseFloat(cantidad);
+                            verificacion = false
+                        } else {
+                            alert(numerosArray[x] + " no es un numero");
+                        }
+                    }
+                }
+            }
+            console.log("hola")
+
+            var ordenada = numerosArray.sort(function(a, b){return a - b})
+
+            alert("El numero mas grande es " + ordenada[1])
+
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
