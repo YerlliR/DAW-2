@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            let numero = parseInt(prompt("Dime un numero y t digo si es feliz"));
+            var conseguido = false
+            var numerosArray = []
+
+            for (var x = 0; x < 8; x++){
+                numerosArray = numero.toString().split('').map(Number);
+                for (var i = 0; i < numerosArray.length; i++){
+                    numerosArray[i] = numerosArray[i] * numerosArray[i]
+
+                }
+                numero = 0
+
+                for (var y = 0; y < numerosArray.length; y++){
+                    numerosArray = numerosArray.map(Number)
+
+                    numero = numerosArray[y] + numero
+                }
+
+                if (numero == 1){
+                    conseguido = true
+                }
+            }
+
+
+            if (conseguido){
+                alert("EL NUMERO ES FELIZ :)")
+
+            }else {
+                alert("EL NUMERO NO ES FELIZ :(")
+            }
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
