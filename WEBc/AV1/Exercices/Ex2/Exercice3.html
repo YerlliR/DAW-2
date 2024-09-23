@@ -9,11 +9,8 @@
             tiene que comprobar si la letra concuerda con la serie numérica.
             */
 
-            var dni = prompt("Dime tu DNI: ")
-            var correo = prompt("Dime tu correo")
-            var tlf = prompt("Dime tu telefono")
-            var ip = prompt("Dime tu ip")
-            var url = prompt("Dime un url")
+
+
 
             function dniVerification(dni){
                 const letras = [
@@ -22,49 +19,114 @@
                   ];
 
                 if (dni.length !== 9){
-                    return "DNI: ERROR"
+                    alert("EL DNI NO ES CORRECTO")
                 }else{
                     let array = dni.split('');
                     const letra = dni[array.length - 1].toUpperCase();
                     array.pop()
-                    array = array.map(Number)
-                    let numeroFinal = array.toString()
+                    let numeroFinal = array.join('')
+                    console.log(typeof(numeroFinal))
+                    console.log(numeroFinal)
                     numeroFinal = parseInt(numeroFinal)
+                    console.log(numeroFinal)
+                    console.log(typeof(numeroFinal))
+
                     numeroFinal = numeroFinal % 23
                     if (letra === letras[numeroFinal]){
-                        return "DNI: OK"
+                        alert("EL DNI ES CORRECTO")
                     }else {
-                        return "DNI: ERROR"
+                        alert("EL DNI NO ES CORRECTO")
                     }
                 }
             }
             function correoVerification(correo){
+                const restricciones = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+                let validacion = restricciones.test(correo)
+                if(validacion){
+                    alert("El correo es correcto")
+                }else {
+                    alert("El correo no es correcto")
+                }
             }
             function tlfVerification(tlf){
-                const restricciones = /^34 [6-7][0-9]{8}$/
+                const restricciones = /^\+34 ([6-7]||[9])[0-9]{8}$/
+
                 let validacion = restricciones.test(tlf)
                 if(validacion){
-                    return "Telefono: OK"
+                    alert("El telefono es correcto")
                 }else {
-                    return "Telefono: ERROR"
+                    alert("El telefono no es correcto")
                 }
 
             }
             function ipVerification(ip){
+                const partes = ip.split('.');
+
+                if (partes.length !== 4) {
+                    return false;
+                }
+
+                for (let i = 0; i < partes.length; i++) {
+                    const numero = parseInt(partes[i]);
+
+                    if (isNaN(numero) || numero < 0 || numero > 255) {
+                        return false;
+                    }
+                }
+
+                return true;
+
 
             }
             function urlVerification(url){
+                const restriccion = /^(https?:\/\/)$/;
+                if (restriccion.test(url)){
+                    alert("URL valida:")
+                }else {
+                    alert("URL NO valida:")
+                }
+            }
+
+
+            var election = prompt("Que quieres hacer ?? \n1.Verificar DNI\n2.Verificar correo\n3.Verificar telefono\n4.Verificar IP\n5.Verificar URL")
+            switch (parseInt(election)){
+                case 1:
+                    var dni = prompt("Dime tu DNI: ")
+                    dniVerification(dni)
+                    break;
+
+
+                case 2:
+                    var correo = prompt("Dime tu correo")
+                    correoVerification(correo)
+                    break;
+
+                case 3:
+                    var tlf = prompt("Dime tu telefono")
+                    tlfVerification(tlf)
+                    break;
+
+                case 4:
+                    var ip = prompt("Dime tu ip")
+                    if (ipVerification(ip)){
+                        alert("ip valida")
+                    }else {
+                        alert("ip no valida")
+                    }
+                    break;
+
+                case 5:
+                    var url = prompt("Dime un url")
+                    urlVerification(url)
+                    break;
+
+                default:
+                    alert("Dime una opcion valida")
+                    break;
 
             }
 
-            alert(  dniVerification(dni) + "" +
-                    correoVerification(correo)
-            )
-
-            tlfVerification(tlf)
-            ipVerification(ip)
-            urlVerification(url)
         </script>
     </head>
     <body>
