@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            function mesLargo(fecha){
+                const meses = [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                  ];
+                return meses[fecha.split("/")[1] - 1]
+            }
+
+            alert(mesLargo(prompt("Dime una fecha y te digo el mes que has dicho, escribelo con este formato: dia/mes/año " )))
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

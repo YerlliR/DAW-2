@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+            function diasMes(fecha) {
+                fecha = fecha.split(",")
+                let mes = fecha[0]
+                let anyo = fecha[1]
+                console.log(typeof(mes) + " - " + typeof(anyo))
+                return new Date(anyo, mes, 0).getDate();
+            }
+            
+            alert("El mes indicado tiene " + diasMes(prompt("Dime un mes y un año y t digo cuantos dias tiene ese mes")))
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

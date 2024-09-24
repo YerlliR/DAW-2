@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+        <script>
+            function esFecha(valor) {
+                return valor instanceof Date && !isNaN(valor);
+            }
+
+            let valor =new Date(prompt("Dime una fecha y t digo si es valida o no"))
+            resultado = esFecha(valor)
+            if (resultado){
+                alert("Es una fecha valida")
+            }else{
+                alert("NO es una fecha valida")
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
