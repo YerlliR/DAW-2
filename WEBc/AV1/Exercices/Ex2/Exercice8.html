@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function extraer(cadena, numCaracteres, direccion) {
+                if (direccion === "inicio") {
+                    return cadena.slice(0, numCaracteres);
+                } else if (direccion === "fin") {
+                    return cadena.slice(-numCaracteres);
+                } else {
+                    return "Dirección no válida. Usa 'inicio' o 'fin'.";
+                }
+            }
+
+            let elemento = prompt("Dime una cadena de texto, cuantas letras quieres extraer y si quieres empezar por el incio o por el fin ejemplo: \nCristiano Ronaldo Apesta, 4, fin")
+            elemento = elemento.split(",")
+            alert(extraer(elemento[0],elemento[1],elemento[2]))
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

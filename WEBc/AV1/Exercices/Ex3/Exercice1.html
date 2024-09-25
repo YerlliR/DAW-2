@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Formulario Verificado</title>
+        <link rel="stylesheet" href="Exercice1.css">
+    </head>
+    <body>
+        <script src="Exercice1.js"></script>
+
+        <form action="/submit" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required onblur="verificacionEmail()">
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required onblur="verificacionDni()">
+
+            <label for="password">Contraseña:</label>
+            <input type="text" id="password" name="password" required onblur="verificacionContrasenya()">
+
+            <label for="repeat-password">Repetir Contraseña:</label>
+            <input type="text" id="repeat-password" name="repeat-password" required onblur="verificarRepeticionDeContrasenya()">
+
+            <label for="ip">IP:</label>
+            <input type="text" id="ip" name="ip" required onblur="verificacionIp()">
+
+            <input type="submit" value="Registrar">
+        </form>
+    </body>
+</html>
