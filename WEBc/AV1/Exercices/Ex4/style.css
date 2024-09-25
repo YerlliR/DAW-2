@@ -1,0 +1,30 @@
+*{
+    display: flex;
+}
+.cuadrado{
+    width: 200px; /* Ancho del cuadrado */
+    height: 200px; /* Alto del cuadrado */
+    margin: 5px;
+    box-shadow: 15px 10px 5px 0 #1f1f1f;
+
+}
+.miniCaja{
+    flex-direction: column;
+    align-items: center;
+}
+.eliminar{
+    width: 100px;
+    justify-content: center;
+}
+#rojo{
+    background-color: red;
+}
+#verde{
+    background-color: green; /* Color de fondo rojo */
+}
+#azul{
+    background-color: blue; /* Color de fondo rojo */
+}
+#amarillo{
+    background-color: yellow; /* Color de fondo rojo */
+}
