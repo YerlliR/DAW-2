@@ -2,7 +2,7 @@ function verificacionEmail(){
     let correo = document.getElementById('email').value
 
     const restricciones = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    document.getElementById('ip').style.borderColor = '';
+    document.getElementById('email').style.borderColor = '';
 
     let validacion = restricciones.test(correo)
     if(validacion){
@@ -21,7 +21,7 @@ function verificacionDni(){
                     'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B',
                     'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'
                   ];
-    document.getElementById('ip').style.borderColor = '';
+    document.getElementById('dni').style.borderColor = '';
 
     if (dni.length !== 9){
         alert("EL DNI NO ES CORRECTO")
