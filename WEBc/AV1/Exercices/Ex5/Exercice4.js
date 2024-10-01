@@ -69,6 +69,10 @@ function crearFrase() {
     } else {
         document.getElementById('frases4').appendChild(frase);
     }
+
+    document.querySelectorAll('#frases p, #frases2 p, #frases3 p, #frases4 p').forEach(function(elemento) {
+        elemento.addEventListener('dblclick', moverElemento);
+    });
 }
 
 function moverElemento(event) {
@@ -85,7 +89,3 @@ function moverElemento(event) {
         document.getElementById('frases4').appendChild(elemento);
     }
 }
-
-document.querySelectorAll('#frases p, #frases2 p, #frases3 p, #frases4 p').forEach(function(elemento) {
-    elemento.addEventListener('dblclick', moverElemento);
-});
