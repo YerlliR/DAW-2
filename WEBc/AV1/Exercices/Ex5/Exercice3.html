@@ -2,12 +2,12 @@
 <html lang="es">
     <head>
 
-        <title>Exercice 1</title>
+        <title>Exercice 3</title>
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
-        <script src="Exercice1.js"></script>
+        <script src="Exercice3.js"></script>
 
         <form action="/submit" method="post">
             <label for="nombre">Nombre:</label>
@@ -19,11 +19,18 @@
             <label for="dni">DNI:</label>
             <input type="text" id="dni" name="dni" required>
 
-
+            <label for="listado">Listado</label>
+            <select id="listado" name="genero" required>
+                <option value="lista1">lista1</option>
+                <option value="lista2">lista2</option>
+            </select>
         </form>
         <button onclick="verficacionFormulario()">Copiar</button>
 
-        <div id="frases"></div>
+        <div id="frases">Listado 1</div>
+        <div id="frases2">Listado 2</div>
+
+
 
     </body>
 </html>
