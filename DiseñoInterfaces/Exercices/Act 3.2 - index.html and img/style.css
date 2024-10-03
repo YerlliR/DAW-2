@@ -1,0 +1,24 @@
+
+table, tr, td, .cabezera{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+    font-family: Arial, serif;
+}
+tr:nth-child(even){
+    background-color: #FFFFCC;
+}
+tr:hover{
+    background-color: #FFFF66;
+}
+.cabezera{
+    background-color: #3333;
+}
+.divisa{
+    background-color: #E6F3FF;
+}
+
+th{
+    background-image: url("img/fondo_gris.gif");
+
+}
