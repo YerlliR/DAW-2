@@ -1,0 +1,41 @@
+body{
+    background-image: url(../imgs/old_map.png) ;
+}
+
+
+#cabezera{
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    padding: 10px;
+}
+#tituloPrincipal{
+    color: white;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#lineaPrincipal{
+    background-color: black;
+    height: 5px;
+}
+
+#menu{
+    background-image: url(../imgs/red015.jpg);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.miniContainer{
+    flex-direction: column;
+
+}
+.loguitos{
+    width: 50px;
+}
+.tituloLoguito{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(209, 207, 61);
+    
+}
+#contenedorPrincipal{
+    background-image: url(../imgs/lgrey008.jpg);
+}
