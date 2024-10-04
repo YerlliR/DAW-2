@@ -36,6 +36,47 @@ body{
     color: rgb(209, 207, 61);
     
 }
+.tituloLoguito:hover{
+    color: white;
+}
+
 #contenedorPrincipal{
     background-image: url(../imgs/lgrey008.jpg);
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.tarjetas{
+    background-color: white;
+    margin: 10px;
+    text-align-last: center;
+    padding: 10px;
+    max-width: 300px;
+
+}
+.tituloTarjeta{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.lineaTarjeta{
+    height: 1px;
+    background-color: rgb(175, 173, 173);
+
+}
+
+#piePagina{
+    background-color: rgb(77, 77, 77);
+    margin: 0px;
+    height: 50px;
+    padding: 10px;
+
+}
+
+#textoPie{
+    color: white;
+    text-align: center;
+
+
 }
