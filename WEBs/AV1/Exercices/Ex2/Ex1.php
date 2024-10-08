@@ -2,34 +2,22 @@
 /**
  * @author Sergio Ricart Alabau
  */
-
-
-function esCaracter($caracter){
-if ()
+function analizarCaracter($caracter) {
+    if (ctype_upper($caracter)) {
+        echo "$caracter es una letra mayúscula.\n";
+    } elseif (ctype_lower($caracter)) {
+        echo "$caracter es una letra minúscula.\n";
+    } elseif (ctype_digit($caracter)) {
+        echo "$caracter es un carácter numérico.\n";
+    } elseif (ctype_space($caracter)) {
+        echo "$caracter es un carácter blanco (espacio, tab, salto de línea, etc).\n";
+    } elseif (ctype_punct($caracter)) {
+        echo "$caracter es un carácter de puntuación.\n";
+    } else {
+        echo "$caracter es un carácter especial.\n";
+    }
 }
 
-
-$caracter = readline("Escribe un caracter");
-
-//Imprime 50 líneas en blanco, lo hago por estética.
-echo str_repeat(PHP_EOL, 50);
-
-
-if (ctype_upper($caracter)) {
-    return "El carácter es una letra mayúscula.";
-} elseif (ctype_lower($caracter)) {
-    return "El carácter es una letra minúscula.";
-} elseif (ctype_digit($caracter)) {
-    return "El carácter es un carácter numérico.";
-} elseif (ctype_space($caracter)) {
-    return "El carácter es un carácter blanco.";
-} elseif (esCaracter($caracter)){
-
-}
-
-
-
-echo "Tu caracter es:";
-
-
+$caracter = readline("Introduce un carácter: ");
+analizarCaracter($caracter);
 
