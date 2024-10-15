@@ -2,6 +2,7 @@
 /**
  * @author Sergio Ricart Alabau
  */
+
 // Inicializamos un array para almacenar las notas
 $notas = [];
 

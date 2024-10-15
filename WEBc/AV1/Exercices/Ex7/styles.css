@@ -1,22 +1,49 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
 }
 .container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
 }
 .cajaLetra{
-    border: solid 2px black;
+    border: solid 2px rgb(160, 160, 160);
     width: 5rem;
     height: 5rem;
     margin: 0.3rem;
+}
+
+
+.fila{  
+    display: flex
     
+}
+
+
+.tecla{
+    border: solid 1px rgb(70, 70, 70);
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(70, 70, 70);
+}
+.teclado{
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+    margin-top: 1rem;
+
 
 }
 
-.fila{
-    display: flex
-    
+#enter{
+    width: 5.3rem;
 }
