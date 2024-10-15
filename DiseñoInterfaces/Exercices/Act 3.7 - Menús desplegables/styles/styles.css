@@ -19,7 +19,6 @@ ul {
 
 ul li {
     position: relative;
-    float: left;
     display: inline-block;
     width: 100px;
     height: 25px;
