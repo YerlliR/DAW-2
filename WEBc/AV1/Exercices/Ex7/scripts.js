@@ -1,13 +1,51 @@
 
-let i = 1;
+let i = 0;
 
 function añadirLetra(e) {
     const valor = e.target.textContent;
     let cuadro = document.getElementById("caja" + i);
-    cuadro.textContent = valor;
-    i++;
-    // Imprimir la letra por consola
-    console.log("Letra presionada:", valor);
+
+    switch (valor) {
+        case 'A':
+        case 'B':
+        case 'C':
+        case 'D':
+        case 'E':
+        case 'F':
+        case 'G':
+        case 'H':
+        case 'I':
+        case 'J':
+        case 'K':
+        case 'L':
+        case 'M':
+        case 'N':
+        case 'O':
+        case 'P':
+        case 'Q':
+        case 'R':
+        case 'S':
+        case 'T':
+        case 'U':
+        case 'V':
+        case 'W':
+        case 'X':
+        case 'Y':
+        case 'Z':
+            i++;
+            cuadro.textContent = valor;
+            break;
+        case '←':
+            if (i > 1) {
+                i--;
+                cuadro.textContent = "";
+            }else{
+                cuadro.textContent = "";
+            }
+            break;
+
+    };
+
 }
 
 
