@@ -2,6 +2,9 @@
 /**
  * @author Sergio Ricart Alabau
  */
+
+
+//Función para analizar el tipo de carácter introducido.
 function analizarCaracter($caracter) {
     if (ctype_upper($caracter)) {
         echo "$caracter es una letra mayúscula.\n";
@@ -20,4 +23,5 @@ function analizarCaracter($caracter) {
 
 $caracter = readline("Introduce un carácter: ");
 analizarCaracter($caracter);
+
 
