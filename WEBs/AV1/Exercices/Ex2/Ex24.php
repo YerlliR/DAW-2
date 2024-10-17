@@ -19,6 +19,17 @@ function solicitarDatosTrabajadores() {
     return $trabajadores;
 }
 
+// Función para calcular el salario aumentado por un porcentaje
+function calcularSalarioAumentado($trabajadores, $porcentaje) {
+    $salariosAumentados = [];
+    foreach ($trabajadores as $nombre => $salario) {
+        $aumento = $salario * ($porcentaje / 100); // Calcular el aumento
+        $nuevoSalario = $salario + $aumento; // Nuevo salario con aumento
+        $salariosAumentados[$nombre] = $nuevoSalario;
+    }
+    return $salariosAumentados;
+}
+
 // Función para obtener el salario máximo
 function salarioMaximo($trabajadores) {
     if (empty($trabajadores)) {
@@ -48,10 +59,23 @@ function salarioMedio($trabajadores) {
 // Solicitar datos al usuario
 $trabajadores = solicitarDatosTrabajadores();
 
-// Comprobar si hay trabajadores
+// Verificar si se ingresaron datos
 if (empty($trabajadores)) {
     echo "No se ingresaron trabajadores o salarios.\n";
 } else {
+    // Solicitar el porcentaje de aumento
+    $porcentajeAumento = (float) readline("Ingrese el porcentaje de aumento para los salarios: ");
+    
+    // Calcular los salarios aumentados
+    $salariosAumentados = calcularSalarioAumentado($trabajadores, $porcentajeAumento);
+
+    // Mostrar los salarios originales y los aumentados
+    echo "Salarios actuales y aumentados:\n";
+    foreach ($trabajadores as $nombre => $salario) {
+        $nuevoSalario = $salariosAumentados[$nombre];
+        echo "$nombre: Salario actual = $salario, Salario con aumento ($porcentajeAumento%) = $nuevoSalario\n";
+    }
+
     // Calcular y mostrar los resultados
     echo "El salario máximo es: " . salarioMaximo($trabajadores) . PHP_EOL;
     echo "El salario mínimo es: " . salarioMinimo($trabajadores) . PHP_EOL;
