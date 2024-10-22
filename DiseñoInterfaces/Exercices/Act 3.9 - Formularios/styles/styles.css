@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(177, 177, 177);
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+input {
+    background-color: rgb(177, 177, 177);
+    border: none; /* Color de fondo */
+    border-bottom: 2px dotted black;    /* Borde */
+    color: #333;               /* Color del texto */
+    font-size: 15px;           /* Tamaño de la fuente */
+  }
+  
+
+footer{
+
+    background-image: url(../imgs/bg-form.png);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

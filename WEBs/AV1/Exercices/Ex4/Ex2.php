@@ -9,7 +9,7 @@
     <body>
         <!-- Título principal -->
         <h1>Sergio Ricart Alabau - Formulario de registro 2</h1>
-        <form action="Ex1.php" method="get">
+        <form action="" method="get">
             <!-- Campo para introducir el nombre -->
             <label for="nombre">Nombre:</label>
             <input type="text" name="name" id="name" maxlength="50">
@@ -53,8 +53,8 @@
             <br>
             <br>
             <!-- Selección del estado -->
-            <label for="estado">Selecciona tu estado:</label>
-            <select id="estado" multiple size="2">
+            <label  for="estado">Selecciona tu estado:</label>
+            <select name="estado[]" id="estado" multiple size="2">
                 <option value="estudiando">Estudiando</option>
                 <option value="trabajando">Trabajando</option>
                 <option value="buscando_empleo">Buscando empleo</option>
@@ -79,9 +79,45 @@
             <br>
             <br>
             <!-- Botones de enviar y resetear el formulario -->
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="enviar" id="enviar">
             <input type="reset" value="Reset">
         </form>
+
+        <?php
+            if (isset($_GET['enviar'])) {
+                $data = $_GET;
+
+                echo "<h2>Datos recibidos:</h2>";
+                echo "<b>Nombre:</b> " . strtoupper($data['name']) . "<br>";
+                echo "<b>Apellidos:</b> " . strtoupper($data['apellidos']) . "<br>";
+                echo "<b>Correo:</b> " . strtoupper($data['email']) . "<br>";
+                echo "<b>Usuario:</b> " . strtoupper($data['user']) . "<br>";
+                echo "<b>Contraseña:</b> " . strtoupper($data['password']) . "<br>";
+                echo "<b>Sexo:</b> " . strtoupper($data['sexo']) . "<br>";
+                echo "<b>Provincia:</b> " . strtoupper($data['provincia']) . "<br>";
+
+                if (isset($data['estado'])) {
+                    echo "<b>Estado:</b> " . implode(" - ", array_map('strtoupper', $data['estado'])) . "<br>";
+                } else {
+                    echo "<b>Estado:<b> No seleccionado<br>";
+                }
+
+                echo "<b>Comentarios:</b> " . strtoupper($data['comentarios']) . "<br>";
+
+                if ($data['novedades'] == "on") {
+                    echo "<b>Ha seleccionado recibir ofertas</b><br>";
+                } else {
+                    echo "<b>No ha seleccionado recibir ofertas</b><br>";
+                }
+
+                if ($data['aceptacion'] == "on") {
+                    echo "<b>Declara haber leído y aceptado las condiciones generales del programa y la normativa sobre protección de datos</b><br>";
+                } else {
+                    echo "<b>No declara haber leído y aceptado las condiciones generales del programa y la normativa sobre protección de datos</b><br>";
+                }
+            }
+        ?>
     </body>
 </html>
+
 

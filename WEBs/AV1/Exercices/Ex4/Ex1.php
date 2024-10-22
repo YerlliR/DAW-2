@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Sergio Ricart Alabau - Formulario de registro</h1>
-        <form action="Ex1.php" method="get">
+        <form action="" method="get">
             <!-- Campo para introducir el nombre -->
             <label for="nombre">Nombre:</label>
             <input type="text" name="name" id="name" maxlength="50">
@@ -46,13 +46,37 @@
             <br>
             <br>
             <!-- Checkbox para aceptar condiciones generales del programa y la normativa sobre protección de datos -->
-            <input type="checkbox" id="novedades" name="novedades">
-            <label for="novedades">Declaro haber leído y aceptar las condiciones generales del programa y la normativa sobre protección de datos</label>
+            <input type="checkbox" id="aceptacion" name="aceptacion">
+            <label for="aceptacion">Declaro haber leído y aceptar las condiciones generales del programa y la normativa sobre protección de datos</label>
             <br>
             <br>
             <!-- Botón para enviar el formulario -->
-            <input type="submit" value="Enviar">
+            <input type="submit" name="enviar" id="enviar"value="Enviar">
         </form>
+        <?php
+            if (isset($_GET['enviar'])) {
+                $data = $_GET;
+            
+                echo "<b>Nombre:</b> " . strtoupper($data['name']) . "<br>";
+                echo "<b>Apellidos:</b> " . strtoupper($data['apellidos']) . "<br>";
+                echo "<b>Sexo:</b> " . strtoupper($data['sexo']) . "<br>";
+                echo "<b>Correo:</b> " . strtoupper($data['email']) . "<br>";
+                echo "<b>Provincia:</b> " . strtoupper($data['provincia']) . "<br>";
+
+                if ($data['novedades'] == "on") {
+                    echo "<b>Ha seleccionado recibir ofertas</b><br>";
+                } else {
+                    echo "<b>No ha seleccionado recibir ofertas</b><br>";
+                }
+
+                if ($data['aceptacion'] == "on") {
+                    echo "<b>Declara haber leído y aceptado las condiciones generales del programa y la normativa sobre protección de datos</b><br>";
+                } else {
+                    echo "<b>No declara haber leído y aceptado las condiciones generales del programa y la normativa sobre protección de datos</b><br>";
+                }
+            }
+
+        ?>
     </body>
 </html>
 

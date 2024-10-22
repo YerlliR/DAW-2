@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Alumno - Formulario de registro 4</h1>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form action="" method="get">
         <fieldset>
             <legend>Datos personales</legend>
             <label for="nombre">Nombre:</label>
@@ -74,32 +74,33 @@
         </fieldset>
         <br>
         <fieldset>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="enviar" id="enviar">
             <input type="reset" value="Reset">
         </fieldset>
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $data = $_POST;
+    if (isset($_GET['enviar'])) {
+        $data = $_GET;
 
         // Mostrar datos recibidos
         echo "<h2>Datos recibidos:</h2>";
-        echo "<b>Nombre:</b> {$data['name']}<br>";
-        echo "<b>Apellidos:</b> {$data['apellidos']}<br>";
-        echo "<b>Correo:</b> {$data['email']}<br>";
-        echo "<b>Usuario:</b> {$data['user']}<br>";
-        echo "<b>Sexo:</b> {$data['sexo']}<br>";
-        echo "<b>Provincia:</b> {$data['provincia']}<br>";
+        echo "<b>Nombre:</b> " . strtoupper($data['name']) . "<br>";
+        echo "<b>Apellidos:</b> " . strtoupper($data['apellidos']) . "<br>";
+        echo "<b>Correo:</b> " . strtoupper($data['email']) . "<br>";
+        echo "<b>Usuario:</b> " . strtoupper($data['user']) . "<br>";
+        echo "<b>Contraseña:</b> " . strtoupper($data['password']) . "<br>";
+        echo "<b>Sexo:</b> " . strtoupper($data['sexo']) . "<br>";
+        echo "<b>Provincia:</b> " . strtoupper($data['provincia']) . "<br>";
 
         // Mostrar horarios seleccionados
-        echo "<b>Horario de contacto:</b> " . implode(", ", $data['horario']) . "<br>";
+        echo "<b>Horario de contacto:</b> " . strtoupper(implode(" - ", $data['horario'])) . "<br>";
 
         // Mostrar cómo nos ha conocido
-        echo "<b>¿Cómo nos ha conocido?:</b> " . (isset($data['conocido']) ? implode(", ", $data['conocido']) : 'No especificado') . "<br>";
+        echo "<b>¿Cómo nos ha conocido?:</b> " . (isset($data['conocido']) ? strtoupper(implode(" - ", $data['conocido'])) : 'NO ESPECIFICADO') . "<br>";
 
-        echo "<b>Tipo de incidencia:</b> {$data['tipo_incidencia']}<br>";
-        echo "<b>Descripción de la incidencia:</b> {$data['descripcion']}<br>";
+        echo "<b>Tipo de incidencia:</b> " . strtoupper($data['tipo_incidencia']) . "<br>";
+        echo "<b>Descripción de la incidencia:</b> " . strtoupper($data['descripcion']) . "<br>";
     }
     ?>
 </body>

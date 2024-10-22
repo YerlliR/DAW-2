@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="timer"></div>
+            <div id="puntos">
+                <div id="aciertos"></div>
+                <div id="fallos"></div>
+            </div>
+        </header>
+        <div id="container">
+            <div id="pantallaJuego">
+                <div id="menuPelotas">
+                    <label for="numeroPelotas">Numoero de pelotas:</label>
+                    <select name="pelotas" id="pelotas">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <div id="modo">
+                    <button class="modoJuego" id="todas"> Jugar con todas las pelotas</button>
+                    <button class="modoJuego" id="soloColor"> Jugar con las pelotas de un solo color</button>
+
+                </div>
+                <input type="submit" value="Jugar">
+            </div>
+        </div>
+    </body>
+</html>
