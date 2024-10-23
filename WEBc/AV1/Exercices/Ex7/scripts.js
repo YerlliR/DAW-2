@@ -90,7 +90,16 @@ function anyadirLetra(e) {
                     caja5Entrono.style.backgroundColor = "#757575";
                 } 
 
-                    
+                if (caja1 == palabra[0] && caja2 == palabra[1] && caja3 == palabra[2] && caja4 == palabra[3] && caja5 == palabra[4]) {
+                    document.getElementById("resultado").innerHTML = "¡FELICIDADES! ¡HAS GANADO! <br>";
+                    const botonVolver = document.createElement("button");
+                    botonVolver.textContent = "Volver a jugar";
+                    botonVolver.onclick = () => location.reload();
+                    document.getElementById("resultado").appendChild(botonVolver);
+
+                    document.getElementById("resultado").style.padding = "10px";
+                    document.getElementById("resultado").style.paddingBottom = "40px";
+                }
                 contadorFila++;
                 i=0;
 

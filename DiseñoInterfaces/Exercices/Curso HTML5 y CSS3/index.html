@@ -4,63 +4,59 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Curso HTML5 y CSS3</title>
-        <link rel="stylesheet" href="styles/styles.css">
+        <title>Curso HTML5 y CSS3 v2</title>
+        <link rel="stylesheet" href="./styles/styles.css">
     </head>
+
     <body>
         <div id="container">
-            <div id="cabezera">
-                <img id="logoTitulo" src="imgs/logo.png" alt="">
-                <h1 id="tituloPrincipal">Curso de HTML5 y CSS3</h1>
-            </div>
-            <div class="lineaPrincipal"></div>
-
-            <div id="menu">
-                <div class="miniContainer">
-                    <img src="imgs/book.png" alt="" id="imgMenu1" class="loguitos">
-                    <h3 class="tituloLoguito" id="tituloLoguito1">Contenido</h3>
-                </div>
-                
-                <div class="miniContainer">
-                    <img src="imgs/film.png" alt="" id="imgMenu2" class="loguitos">
-                    <h3 class="tituloLoguito" id="tituloLoguito2">Vídeos</h3>
-    
-                </div>
-
-                <div class="miniContainer">
-                    <img src="imgs/mail.png" alt="" id="imgMenu3" class="loguitos">
-                    <h3 class="tituloLoguito" id="tituloLoguito3">Contacto</h3>
-                </div>
-
-            </div>
-            <div id="contenedorPrincipal">
-
-                <div class="tarjetas" id="tajetaHTML">
-                    <img src="imgs/html5.png" alt="" class="fotoTarjeta">
-                    <h4 class="tituloTarjeta">HTML5</h4> 
-                    <div class="lineaTarjeta"></div>
-                    <p class="textoTarjetas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quidem suscipit, corporis adipisci praesentium saepe, impedit quos beatae obcaecati eius reiciendis, earum consectetur vitae distinctio ad quibusdam molestiae nam id.</p>
-                </div>
-
-                <div class="tarjetas" id="tajetaCSS">
-                    <img src="imgs/css3.png" alt="" class="fotoTarjeta">
-                    <h4 class="tituloTarjeta">CSS3</h4>
-                    <div class="lineaTarjeta"></div>
-                    <p class="textoTarjetas">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas iste itaque dolores fugit laborum, distinctio a neque sapiente nemo necessitatibus recusandae unde non quos exercitationem ipsa, modi quisquam minus quam.</p>
-                </div>
-
-                <div class="tarjetas" id="tajetaJs">
-                    <img src="imgs/javascript.png" alt="" class="fotoTarjeta">
-                    <h4 class="tituloTarjeta">Javascript</h4>
-                    <div class="lineaTarjeta"></div>
-                    <p class="textoTarjetas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem et quis in voluptatem? Dolor voluptatibus explicabo laboriosam, fugit possimus odit! Sequi eius sed eveniet. Sed laudantium temporibus ad iste placeat.</p>
-                </div>
-                
-            </div>
-            <div class="lineaPrincipal"></div>
-            <div id="piePagina">
-                <p id="textoPie">HTML5 Y CSS3 <br> Diseño de interfaces web - 2DAW</p>
-            </div>
+            <header>
+                <h1>Curso de HTML5 y CSS3</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li id="libro"><a href="#">Contenidos</a></li>
+                    <li id="video"><a href="#">Vídeos</a></li>
+                    <li id="contacto"><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <main>
+                <section class="HTML">
+                    <article>
+                        <img src="imgs/html5.png" alt="">
+                        <h2>HTML5</h2>
+                    </article>
+                    <p>
+                        Veremos los nuevos <b>elementos estructurales</b>, así como los nuevos elementos existentes para <b>formularios, audio y vídeo.</b> El <b>nuevo elemento canvas</b> nos abre un mundo de posibilidades en el <b>desarrollo de videojuegos</b> web.</b>
+                    </p>
+                </section>
+                <section class="CSS">
+                    <article>
+                        <img src="imgs/css3.png" alt="">
+                        <h2>CSS3</h2>
+                    </article>
+                    <p>
+                        Mejoraremos nuestros diseños web utilizando las nuevas características de CSS3: <b>efectos, transformaciones, animaciones,</b> etc. Con <b>CSS3</b> nuestros diseños serán más simples, pero no menos impactantes.
+                    </p>
+                </section>
+                <section>
+                    <article class="js">
+                        <img id="javascript" src="imgs/javascript.png" alt="">
+                        <h2>JavaScript</h2>
+                    </article>
+                    <p>
+                        Junto con HTML5 aparecen nuevas <b>API javascript</b> que nos aportan multitud de facilidades y posibilidades en el desarrollo de nuestros proyectos web. Con las nuevas API javascript nuestras manos dejarán de estar atadas.
+                    </p>
+                </section>
+            </main>
+            <footer>
+                <a href="#">HTML5 Y CSS3</a> <br>
+                <a href="#">Diseño de interfaces web - 2ºDAW</a>
+            </footer>
         </div>
+
     </body>
+
 </html>
+
+
