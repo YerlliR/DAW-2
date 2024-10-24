@@ -7,45 +7,49 @@
         <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-        <h1>REGISTRATE!</h1>
-        <form action="">
-            <label for="name">Mi nombre es:</label><br>
-            <input type="text" id="name"><br>
+        <div id="container">
 
-            <label for="email">Mi email es:</label> <br>
-            <input type="email" id="email"><br>
-
-            <label for="recuerdame">Recuerdame en este equipo</label> <br>
-            <input type="checkbox" id="recuerdame"><br>
-
-            <label for="web">Mi direccion web es:</label> <br>
-            <input type="text" id="web"><br>
-
-            <label for="password">Me gustaria que mi password fuera:</label> <br>
-            <p>(almenos de 6 caracteres, sin espacios)</p> <br>
-            <input type="password" id="password"></label><br>
-
-            <label for="password">Mi password repetida es:</label> <br>
-            <input type="password" id="password"></label><br>
-
-            <label for="valoracionHTML">En una escala del 1 al 10, mis conocimientos de HTML5 son:</label> <br>
-            <input type="text" id="valoracionHTML"><br>
-
-            <label for="diaDeInicioSuscripcion">Por favor, inicia mi suscripcion el dia:</label>
-            <input type="date" id="diaDeInicioSuscripcion"><br>
-
-            <label for=""> Me gustaria recibir  <input type="text"> copias del manula de HTML5</label>
-
-            <label for="CSS3">Tambien registrame para el manual de CSS3</label> <br>
-            <input type="checkbox" id="recuerdame"><br>
-
-            <input type="submit" value="Enviar" id="enviar" name="enviar">
-
-        </form>
-
-        <footer>
             
-        </footer>
+            <div id="titulo"><img src="imgs/bg-formtitle-left.png" alt=""><h1>REGISTRATE!</h1><img src="imgs/bg-formtitle-right.png" alt=""></div>
+            
+            <form action="">
+                <label for="name">Mi nombre es:</label><br>
+                <input type="text" id="name"><br>
+
+                <label for="email">Mi email es:</label> <br>
+                <input type="email" id="email"><br>
+
+                <label for="recuerdame">Recuerdame en este equipo</label> <br>
+                <input type="checkbox" id="recuerdame"><br>
+
+                <label for="web">Mi direccion web es:</label> <br>
+                <input type="text" id="web"><br>
+
+                <label for="password">Me gustaria que mi password fuera: <br> (almenos de 6 caracteres, sin espacios)</label>
+                <input type="password" id="password"></label><br>
+
+                <label for="password">Mi password repetida es:</label> <br>
+                <input type="password" id="password"></label><br>
+
+                <label for="valoracionHTML">En una escala del 1 al 10, mis conocimientos de HTML5 son:</label> <br>
+                <input type="range" id="valoracionHTML" min="1" max="10"><br>
+
+                <label for="diaDeInicioSuscripcion">Por favor, inicia mi suscripcion el dia:</label>
+                <input type="date" id="diaDeInicioSuscripcion"><br>
+
+                <label for=""> Me gustaria recibir  <input type="number" id="numCopias"> copias del manula de HTML5</label>
+
+                <label for="CSS3">Tambien registrame para el manual de CSS3</label> <br>
+                <input type="checkbox" id="recuerdame"><br>
+
+                <input type="submit" value="Enviar" id="enviar" name="enviar">
+
+            </form>
+
+            <footer>
+                
+            </footer>
+        </div>
     </body>
 </html>
 
