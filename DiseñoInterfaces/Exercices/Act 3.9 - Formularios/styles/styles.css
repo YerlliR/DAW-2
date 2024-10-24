@@ -15,6 +15,7 @@ body{
     align-items: center;
     background-color: rgb(177, 177, 177);
     width: 50%;
+    
 
 }
 #titulo{
@@ -59,6 +60,21 @@ input {
 }
 #valoracionHTML{
     accent-color: #4d4d4d; /* Cambia el color del control del tipo range */
+
+}
+#enviar{
+    background-color: rgba(0, 0, 0, 0.589);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 400px;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
 
 }
 
