@@ -22,11 +22,11 @@
         <?php
             if (isset($_GET['enviar'])) {
                 $horas = $_GET['horas'];
-                for ($i = 0; $i < $horas; $i++) {
+                for ($i = 1; $i <= $horas; $i++) {
                     if ($i <= 40) {
                         $sueldo = 12 + $sueldo;
                     }elseif ($i > 40) {
-                        $sueldo = 16 + $sueldo;
+                        $sueldo = 16 + $sueldo; 
                     }else {
                         echo "Error";
                     }
