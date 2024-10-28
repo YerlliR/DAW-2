@@ -2,3 +2,98 @@
     margin: 0;
     padding: 0;
 }
+
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+  
+
+h1{
+    font-family: "Tiny5", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: red;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-shadow: 3px 3px 3px rgb(124, 0, 0);
+}
+
+#menuJuego{
+    background-color: rgb(59, 59, 59);
+    padding: 30px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+}
+
+button{
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+    border: none;
+    margin: 40px 10px;
+    font-family: "Tiny5", sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+button:hover{
+    background-color: rgb(110, 0, 0);
+}
+
+#todas{
+    width:  300px;
+}
+
+#soloColor{
+    width: 300px;
+}
+.modoJuego{
+    text-align: center;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: "Tiny5", sans-serif;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    width: 60px;
+    text-align: center;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+
+#numeroPelotas{
+    margin: 20px;
+    font-family: "Tiny5", sans-serif;
+    font-size: 24px;
+}
+
+#jugar{
+    width: 300px;
+    height: 45px;
+}

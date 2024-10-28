@@ -4,36 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+        </style>
+
+
         <link rel="stylesheet" href="styles.css">
-        <script src="scripts.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <header>
-            <div id="timer"></div>
-            <div id="puntos">
-                <div id="aciertos"></div>
-                <div id="fallos"></div>
-            </div>
+            <h1>JUEGO DE LAS PELOTAS</h1>
         </header>
-        <div id="container">
-            <div id="pantallaJuego">
-                <div id="menuPelotas">
-                    <label for="numeroPelotas">Numoero de pelotas:</label>
-                    <select name="pelotas" id="pelotas">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="40">40</option>
-                        <option value="50">50</option>
-                    </select>
-                </div>
-                <div id="modo">
-                    <button class="modoJuego" id="todas"> Jugar con todas las pelotas</button>
-                    <button class="modoJuego" id="soloColor"> Jugar con las pelotas de un solo color</button>
+        <div id="menuJuego">
+            <label id="numeroPelotas" for="numeroPelotas">NUMERO DE PELOTAS:</label> 
+            <select name="pelotas" id="pelotas">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+            <div id="modo">
+                <button class="modoJuego" id="todas" > JUGAR CON TODAS LAS PELOTAS</button>
+                <button class="modoJuego" id="soloColor"> JUGAR SOLO CON PELOTAS DE UN SOLO COLOR</button>
 
-                </div>
-                <input type="submit" value="Jugar">
             </div>
+            <button id="jugar" onclick="window.location.href='juego.html'">JUGAR</button>
         </div>
     </body>
 </html>
