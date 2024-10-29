@@ -97,3 +97,50 @@ select:hover {
     width: 300px;
     height: 45px;
 }
+
+#panelJuego {
+    background-color: rgba(58, 58, 58, 0.534);
+    height: 37rem;
+    width: 85rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#tiempo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Tiny5", sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+
+}
+
+#marcador{
+    display: flex;
+    font-size: 40px;
+    margin-top: 5px;
+    
+}
+#marcador div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Tiny5", sans-serif;
+    padding-left: 4px;
+}
+#azul{
+    background-color: rgba(0, 110, 255, 0.685);
+    height: 3rem;
+    width: 4rem;
+    border-radius: 10px;
+    margin: 7px;
+}
+#rojo{
+    background-color: rgba(212, 0, 0, 0.767);
+    height: 3rem;
+    width: 4rem;
+    border-radius: 10px;
+    margin: 7px;
+}

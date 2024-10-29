@@ -22,3 +22,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+let tiempo = document.getElementsByClassName("tiempo")
+console.log(tiempo)
+let finalizado = true
+let seconds = 0
+let minutes = 0
+setInterval(timerFunction, 1000);
+function timerFunction(){
+    seconds++
+    console.log(seconds)
+
+    if (seconds == 60){
+        seconds = 0
+        minutes+++
+        console.log("an")
+    }
+    tiempo.innerText = minutes + ":" + seconds
+}
+
