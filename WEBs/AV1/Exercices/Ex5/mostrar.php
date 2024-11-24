@@ -36,3 +36,32 @@
         ?>
     </body>
 </html>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['data'])) {
+    header('Location: formulario.php');
+    exit;
+}
+
+$data = $_SESSION['data'];
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos Introducidos</title>
+</head>
+<body>
+    <h1>Datos Introducidos</h1>
+    <p><strong>Nombre:</strong> <?= htmlspecialchars($data['nombre']) ?></p>
+    <p><strong>Apellidos:</strong> <?= htmlspecialchars($data['apellidos']) ?></p>
+    <p><strong>Edad:</strong> <?= htmlspecialchars($data['edad']) ?></p>
+    <p><strong>Peso:</strong> <?= htmlspecialchars($data['peso']) ?></p>
+    <p><strong>Sexo:</strong> <?= htmlspecialchars($data['sexo']) ?></p>
+    <p><strong>Estado Civil:</strong> <?= htmlspecialchars($data['estado_civil']) ?></p>
+    <p><strong>Aficiones:</strong> <?= htmlspecialchars(implode(', ', $data['aficiones'])) ?></p>
+</body>
+</html>

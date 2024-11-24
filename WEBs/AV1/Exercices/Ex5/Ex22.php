@@ -36,3 +36,34 @@
         ?>
     </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Correo</title>
+</head>
+<body>
+    <h1>Formulario de Correo</h1>
+    <form method="post" action="procesar.php">
+        <!-- Solicitar correo -->
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <!-- Confirmar correo -->
+        <label for="confirmar_correo">Confirmar correo electrónico:</label>
+        <input type="email" id="confirmar_correo" name="confirmar_correo" required><br><br>
+
+        <!-- Aceptar publicidad -->
+        <label>
+            <input type="checkbox" name="publicidad" value="Sí">
+            Acepto recibir publicidad
+        </label><br><br>
+
+        <!-- Botones -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+</body>
+</html>

@@ -36,3 +36,31 @@
         ?>
     </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Formulario</title>
+</head>
+<body>
+    <h1>Resultados del Formulario</h1>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $correo = $_POST['correo'];
+        $confirmar_correo = $_POST['confirmar_correo'];
+        $publicidad = isset($_POST['publicidad']) ? 'Sí' : 'No';
+
+        // Verificar si los correos coinciden
+        if ($correo === $confirmar_correo) {
+            echo "<p><strong>Correo electrónico:</strong> " . htmlspecialchars($correo) . "</p>";
+            echo "<p><strong>¿Acepta recibir publicidad?</strong> " . htmlspecialchars($publicidad) . "</p>";
+        } else {
+            echo "<p style='color: red;'>Error: Los correos electrónicos no coinciden.</p>";
+            echo "<a href='formulario.php'>Volver al formulario</a>";
+        }
+    }
+    ?>
+</body>
+</html>

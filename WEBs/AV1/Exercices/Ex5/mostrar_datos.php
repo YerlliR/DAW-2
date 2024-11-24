@@ -36,3 +36,35 @@
         ?>
     </body>
 </html>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['data'])) {
+    header('Location: Ex23.php');
+    exit;
+}
+
+$data = $_SESSION['data'];
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Introducidos</title>
+</head>
+<body>
+    <h1>Datos Introducidos</h1>
+    <p>Nombre: <?= htmlspecialchars($data['nombre']) ?></p>
+    <p>Apellido: <?= htmlspecialchars($data['apellido']) ?></p>
+    <p>Email: <?= htmlspecialchars($data['email']) ?></p>
+    <p>Nivel de estudios: <?= htmlspecialchars($data['nivel_estudios']) ?></p>
+    <p>Situación actual: <?= htmlspecialchars(implode(', ', $data['situacion'])) ?></p>
+    <p>Hobbies: <?= htmlspecialchars(implode(', ', $data['hobbies'])) ?></p>
+    <?php if (!empty($data['otro_hobby'])): ?>
+        <p>Otro hobby: <?= htmlspecialchars($data['otro_hobby']) ?></p>
+    <?php endif; ?>
+</body>
+</html>
