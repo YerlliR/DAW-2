@@ -1,55 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="styles/styles.css">
-    </head>
-    <body>
-        <div id="container">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Acknowledgement+Medium&display=swap"
+        rel="stylesheet">
+    <title>Formulario de registro</title>
+</head>
 
-            
-            <div id="titulo"><img src="imgs/bg-formtitle-left.png" alt=""><h1>REGISTRATE!</h1><img src="imgs/bg-formtitle-right.png" alt=""></div>
-            
-            <form action="">
-                <label for="name">Mi nombre es:</label><br>
-                <input type="text" id="name"> <img src="imgs/asterisk.png" alt=""><br>
+<body>
+    <form action="" method="get">
+        <h1>Reg&iacute;strate</h1>
 
-                <label for="email">Mi email es:</label> <br>
-                <input type="email" id="email"> <img src="imgs/asterisk.png" alt=""><br>
+        <ul>
+            <li>
+                <label for="nombre">Tu nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required autofocus>
+            </li>
+            <li>
+                <label for="email">Tu email <br><span>(puedes separar varios con comas)</span></label><br>
+                <input type="email" name="email" id="email" required
+                    pattern="^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(,\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}))*$"
+                    multiple> 
+            </li>
+            <li>
+                <label for="recuerdame">Recu&eacute;rdame en este equipo</label><br>
+                <input type="checkbox" name="recuerdame" id="recuerdame">
+            </li>
+            <li>
+                <label for="url">Tu direcci&oacute;n web:</label><br>
+                <input type="url" name="url" id="url">
+            </li>
+            <li>
+                <label for="password1">Tu contrase&ntilde;a:</label><br>
+                <input type="password" name="password1" required pattern="^(?=.*\S).{6,}$">
+            </li>
+            <li>
+                <label for="password2">Confirmaci&oacute;n de tu contrase&ntilde;a:</label><br>
+                <input type="password" name="password2" required pattern="^(?=.*\S).{6,}$">
+            </li>
+            <li>
+                <label for="concocimientos">Nivel de conocimientos de HTML5:</label><br>
+                <input type="range" name="concocimientos" min="1" max="10" value="5">
+            </li>
+            <li>
+                <label for="fechaInicio">Fecha de suscripci&oacute;n:</label><br>
+                <input type="date" name="fechaInicio" required>
+            </li>
+            <li>
+                <label for="cantidad">N&uacute;mero de copias de El manual de HTML5:</label><br>
+                <input type="number" name="cantidad" value="1" min="1" max="5">
+            </li>
+            <li>
+                <label for="tambienCSS3">Suscribirse tambi&eacute;n a El manual de CSS3:</label><br>
+                <input type="checkbox" name="tambienCSS3" id="tambienCSS3">
+            </li>
+            <li>
+                <button>Enviar</button>
 
-                <label for="recuerdame">Recuerdame en este equipo</label> <br>
-                <input type="checkbox" id="recuerdame"><br>
+            </li>
+        </ul>
+    </form>
+</body>
 
-                <label for="web">Mi direccion web es:</label> <br>
-                <input type="text" id="web" placeholder="https://ejemplo.com"><br>
-
-                <label for="password">Me gustaria que mi password fuera: <br> (almenos de 6 caracteres, sin espacios)</label>
-                <input type="password"  id="password"></label> <img src="imgs/asterisk.png" alt=""><br>
-
-                <label for="password">Mi password repetida es:</label> <br>
-                <input type="password" id="password"></label><img src="imgs/asterisk.png" alt=""><br>
-
-                <label for="valoracionHTML">En una escala del 1 al 10, mis conocimientos de HTML5 son:</label> <br>
-                <input type="range" id="valoracionHTML" min="1" max="10"><br>
-
-                <label for="diaDeInicioSuscripcion">Por favor, inicia mi suscripcion el dia:</label>
-                <input type="date" id="diaDeInicioSuscripcion"> <img src="imgs/asterisk.png" alt=""><br>
-
-                <label for=""> Me gustaria recibir  <input type="number" id="numCopias"> copias del manula de HTML5</label>
-
-                <label for="CSS3">Tambien registrame para el manual de CSS3</label> <br>
-                <input type="checkbox" id="recuerdame"><br>
-
-                <input type="submit" value="ENVÍAME" id="enviar" name="enviar">
-
-            </form>
-
-            <footer>
-                
-            </footer>
-        </div>
-    </body>
 </html>
 
