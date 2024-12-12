@@ -1,9 +1,5 @@
 
-<?php
-/**
- * @author Sergio Ricart Alabau
-*/
-?>
+^(46|12|03)\d{3}$
 <!DOCTYPE html>
 <html lang="es">
     <head>
