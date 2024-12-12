@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Senia. . . Refugiada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>La Sénia Refugiada</h1>
+  </header>
+  <main>
+    <section id="selector">
+      <button class="env-button" data-video="waterfall.mp4" data-audio="nature.mp3">Cascada</button>
+      <button class="env-button" data-video="ocean.mp4" data-audio="lofi.mp3">Mar</button>
+      <button class="env-button" data-video="forest.mp4" data-audio="soul.mp3">Bosque</button>
+      <button class="env-button" data-video="cafe.mp4" data-audio="jazz.mp3">Cafetería</button>
+    </section>
+    <section id="reproductor">
+      <div class="video-wrapper">
+        <video id="video" autoplay muted></video>
+      </div>
+      <div id="controles">
+        <button id="play">▶️</button>
+        <button id="pause">⏸️</button>
+        <button id="mute">🔇</button>
+        <input type="range" id="volume" min="0" max="1" step="0.1">
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

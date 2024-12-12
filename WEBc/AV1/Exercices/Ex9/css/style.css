@@ -169,3 +169,52 @@
 .invisible {
     display:none;
 }
+
+
+
+/* Actualización del CSS para las barras de progreso */
+
+#jugador, #maquina {
+    position: relative;
+    width: 100px;
+    height: 300px; /* Altura máxima definida para las barras */
+    border: 2px solid #333;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Indicadores de progreso */
+.punto {
+    width: 100%;
+    transition: height 0.3s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+.mio {
+    background-color: #4caf50; /* Verde para el jugador */
+    border-top: 2px solid #388e3c;
+}
+
+.suyo {
+    background-color: #f44336; /* Rojo para la máquina */
+    border-top: 2px solid #d32f2f;
+}
+
+/* Opcional: Etiquetas para los contenedores */
+#jugador::before, #maquina::before {
+    content: attr(id);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Sigmar One', cursive;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Ajustes visuales generales */
+#jugador .punto, #maquina .punto {
+    border-radius: 5px 5px 0 0;
+}

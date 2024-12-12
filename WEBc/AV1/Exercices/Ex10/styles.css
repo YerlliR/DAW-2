@@ -1,0 +1,67 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: black;
+    color: #00ff00;
+    margin: 0;
+    text-align: center;
+  }
+  
+  header {
+    padding: 20px;
+    border-bottom: 2px solid #00ff00;
+  }
+  
+  #selector {
+    margin: 20px 0;
+  }
+  
+  .env-button {
+    background: none;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .env-button:hover {
+    background-color: #00ff00;
+    color: black;
+  }
+  
+  #reproductor {
+    margin-top: 20px;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    border: 3px solid #00ff00;
+  }
+  
+  video {
+    width: 100%;
+    display: block;
+  }
+  
+  #controles {
+    margin-top: 10px;
+  }
+  
+  #controles button {
+    background: none;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#controles input {
+  width: 30%;
+}
