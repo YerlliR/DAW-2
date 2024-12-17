@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imágenes Adaptativas</title>
+</head>
+<body>
+
+  <!-- Cambio de Dirección Artística con <picture> -->
+  <picture>
+    <source media="(max-width: 800px)" srcset="globo2.jpeg">
+    <img src="globo.jpg" alt="Globo aerostático sobre un paisaje">
+  </picture>
+
+  <br><br>
+
+  <img src="polilla.jpg"
+    alt="Imagen de una polilla"
+    srcset="polilla-320.jpg 320w,
+            polilla-480.jpg 480w,
+            polilla.jpg 800w"
+    sizes="(max-width: 300px) 320px,
+           (max-width: 500px) 480px,
+           800px">
+
+</body>
+</html>

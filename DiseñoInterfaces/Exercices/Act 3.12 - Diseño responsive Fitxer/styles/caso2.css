@@ -1,0 +1,15 @@
+div {
+    display: inline-block;
+    height:300px;
+    width: 300px;
+    background: #ff0000;
+    margin:25px;
+}
+
+@media all and (max-width: 800px) {
+    div {
+        display: block !important;
+        width: auto !important;
+        margin: 20px !important;
+    }
+}
