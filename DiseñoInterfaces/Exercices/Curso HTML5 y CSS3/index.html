@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Curso HTML5 y CSS3 v2</title>
-        <link rel="stylesheet" href="./styles/styles.css">
-    </head>
 
-    <body>
-        <div id="container">
-            <header>
-                <h1>Curso de HTML5 y CSS3</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li id="libro"><a href="#">Contenidos</a></li>
-                    <li id="video"><a href="#">Vídeos</a></li>
-                    <li id="contacto"><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-            <main>
-                <section class="HTML">
-                    <article>
-                        <img src="imgs/html5.png" alt="">
-                        <h2>HTML5</h2>
-                    </article>
-                    <p>
-                        Veremos los nuevos <b>elementos estructurales</b>, así como los nuevos elementos existentes para <b>formularios, audio y vídeo.</b> El <b>nuevo elemento canvas</b> nos abre un mundo de posibilidades en el <b>desarrollo de videojuegos</b> web.</b>
-                    </p>
-                </section>
-                <section class="CSS">
-                    <article>
-                        <img src="imgs/css3.png" alt="">
-                        <h2>CSS3</h2>
-                    </article>
-                    <p>
-                        Mejoraremos nuestros diseños web utilizando las nuevas características de CSS3: <b>efectos, transformaciones, animaciones,</b> etc. Con <b>CSS3</b> nuestros diseños serán más simples, pero no menos impactantes.
-                    </p>
-                </section>
-                <section>
-                    <article class="js">
-                        <img id="javascript" src="imgs/javascript.png" alt="">
-                        <h2>JavaScript</h2>
-                    </article>
-                    <p>
-                        Junto con HTML5 aparecen nuevas <b>API javascript</b> que nos aportan multitud de facilidades y posibilidades en el desarrollo de nuestros proyectos web. Con las nuevas API javascript nuestras manos dejarán de estar atadas.
-                    </p>
-                </section>
-            </main>
-            <footer>
-                <a href="#">HTML5 Y CSS3</a> <br>
-                <a href="#">Diseño de interfaces web - 2ºDAW</a>
-            </footer>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso HTML5 y CSS3</title>
+    <link rel="stylesheet" href="./styles/estilo.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
 
-    </body>
+<body>
+    <div id="page">
+        <header>
+            <h1><img src="./img/logo.png" alt="logo">Curso de HTML5 y CSS3</h1>
+        </header>
+        <!-- Menu -->
+        <nav>
+            <a href="#" id="menu"><img src="./img/menu.png" alt="Barras menu"></a>
+            <ul>
+                <li id="contenido"><a href="./index.html">Contenidos</a></li>
+                <li id="videos"><a href="./videos.html">Vídeos</a>
+                    <ul>
+                        <li><a href="videos.html">Videos1</a></li>
+                        <li><a href="videos.html">Videos2</a></li>
+                        <li><a href="videos.html">Videos3</a></li>
+                    </ul>
+                </li>
+                <li id="contacto"><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Contenido -->
+        <main>
+            <!-- Seccion 1 -->
+            <section id="seccion1">
+                <article>
+                    <div class="chincheta" id="primera"></div>
+                    <img src="img/html5.png" alt="">
+                    <h2>HTML5</h2>
+                    <hr>
+                </article>
+                <p>Veremos los nuevos <b>elementos estructurales</b>, así como los nuevos elementos existentes para
+                    <b>formulairos, audio y vídeo.</b> El <b>nuevo elemento canvas</b> nos abre un mundo de
+                    posibilidades en el <b>desarollo de videojuegos</b> web.</b>
+                </p>
+            </section>
+            <!-- Seccion 2 -->
+            <section>
+                <article>
+                    <div class="chincheta" id="segunda"></div>
+                    <img src="img/css3.png" alt="">
+                    <h2>CSS3</h2>
+                    <hr>
+                </article>
+                <p>Mejoraremos nuestros diseños web utilizando las nuevas características de CSS3: <b>efectos,
+                        transformaciones, animaciones,</b> etc. Con <b>CSS3</b> nuestros diseños serán más simples, pero
+                    no menos impactantes.</p>
+            </section>
+            <!-- Seccion 3 -->
+            <section id="seccion3">
+                <article>
+                    <div class="chincheta" id="tercera"></div>
+                    <img id="javascript" src="img/javascript.png" alt="">
+                    <h2>JavaScript</h2>
+                    <hr>
+                </article>
+                <p>Junto con HTML5 aparecen nuevas <b>API javascript</b> que nos aportan multitud de facilidades y
+                    posibilidades en el desarollo de nuestros proyectos web. Con las nuevas API javascript nuestras
+                    manos dejarán de estar atadas.</p>
+            </section>
+        </main>
+        <!-- Pie de pagina -->
+        <footer>
+            <a href="">HTML5 Y CSS3</a> <br>
+            <a href="">Diseño de interfaces web - 2ºDAW</a>
+        </footer>
+    </div>
+    <script src="./js/animacion.js" defer></script>
+    <script src="./js/menu.js"></script>
+
+</body>
 
 </html>
 
