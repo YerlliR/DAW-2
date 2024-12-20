@@ -1,0 +1,35 @@
+
+nav {
+    background-color: #000000;
+    padding: 15px;
+    text-align: right;
+}
+
+
+nav ul li {
+    display: inline;
+}
+
+
+.menu-icon {
+    display: none;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav.active ul {
+        display: block;
+    }
+}

@@ -1,0 +1,59 @@
+header {
+    background-color: #000000;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #ff0000;
+    padding: 10px;
+    width: 20%;
+    float: left;
+}
+
+main {
+    padding: 10px;
+    width: 55%;
+    float: left;
+}
+
+aside {
+    background-color: #00ff44;
+    padding: 10px;
+    width: 20%;
+    float: left;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    header {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        background-color: #000000;
+
+    }
+
+    nav, main, aside {
+        width: 100%;
+        float: none;
+        padding: 10px;
+    }
+
+    nav {
+        order: 1;
+        background-color: #ff0000;
+
+    }
+
+    main {
+        order: 2;
+    }
+
+    aside {
+        order: 3;
+        background-color: #00ff44;
+    }
+}
