@@ -1,14 +1,9 @@
-var enlaceMenu;
+document.addEventListener("DOMContentLoaded", () => {
+    const enlaceMenu = document.querySelector("nav>a");
 
-function iniciarMenu() 
-{
-	enlaceMenu = document.querySelector("nav>a");
-	enlaceMenu.addEventListener("click", despliegaMenu, false);
-}
+    const despliegaMenu = () => {
+        document.querySelector("nav>ul").classList.toggle('desplegado');
+    };
 
-function despliegaMenu()
-{
-	document.querySelector("nav>ul").classList.toggle('desplegado');
-}
-
-window.addEventListener("load", iniciarMenu, false);
+    enlaceMenu.addEventListener("click", despliegaMenu, false);
+});

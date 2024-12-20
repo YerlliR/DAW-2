@@ -11,7 +11,7 @@
     margin: 0 auto;
     width: 1100px;
     text-align: left;
-    box-shadow: 10px 10px 5px 5px #888888; /* Sombra para el contenedor principal */
+    box-shadow: 10px 10px 5px 5px #737373; /* Sombra para el contenedor principal */
     border-radius: 20px 20px 20px 20px; /* Bordes redondeados */
 }
 
@@ -25,7 +25,7 @@ header {
     line-height: 1.4em;
     color: white;
     font-size: 1.1em;
-    background-image: linear-gradient(rgb(17, 112, 163), rgb(105, 172, 172)); /* Gradiente en el fondo */
+    background-image: linear-gradient(rgb(16, 113, 165), rgb(101, 173, 173)); /* Gradiente en el fondo */
     border-bottom: 6px solid black; /* Línea de separación en el fondo */
     border-radius: 20px 20px 0px 0px; /* Bordes redondeados solo arriba */
 }
@@ -57,7 +57,7 @@ header h1 img {
 nav {
     font-family: 'Luckiest Guy';
     text-align: center;
-    background-image: linear-gradient(rgb(240, 219, 5), rgb(219, 209, 120)); /* Gradiente de fondo */
+    background-image: linear-gradient(rgb(246, 226, 5), rgb(219, 209, 120)); /* Gradiente de fondo */
     font-size: 1.4em;
     padding: 5px;
 }
@@ -100,13 +100,13 @@ nav li#contacto {
 nav a {
     text-decoration: none;
     color: white;
-    text-shadow: 2px 2px 5px #f06829; /* Sombra en el texto */
+    text-shadow: 2px 2px 5px #e16024; /* Sombra en el texto */
     transition: all 0.5s;
 }
 
 nav a:hover {
     color: rgb(190, 186, 186);
-    text-shadow: 0px 0px 5px #ff7e42; /* Efecto en hover */
+    text-shadow: 0px 0px 5px #f27236; /* Efecto en hover */
 }
 
 /* Dropdown de Videos */
@@ -128,16 +128,16 @@ nav ul li#videos:hover ul {
 
 nav ul li#videos ul li {
     padding: 10px;
-    background-color: #e35c26;
+    background-color: #cf511f;
     font-size: 0.8em;
 }
 
 nav ul li#videos ul li:nth-child(even) {
-    background-color: #f06929;
+    background-color: #db571a;
 }
 
 nav ul li#videos ul li:hover {
-    background-color: #ff7e42;
+    background-color: #cb4f16;
 }
 
 nav ul li#videos:before {
@@ -147,7 +147,7 @@ nav ul li#videos:before {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #f06929;
+    border-bottom: 5px solid #e25f22;
     left: 50%;
     top: 118px;
     transform: translateX(-50%);
@@ -277,14 +277,14 @@ section:last-of-type {
 
 /* Fondo específico para JavaScript */
 article #javascript {
-    background: radial-gradient(rgb(247, 230, 85), rgb(252, 252, 252)); /* Gradiente radial */
+    background: radial-gradient(rgb(250, 232, 74), rgb(252, 252, 252)); /* Gradiente radial */
 }
 
 /* Estilo para los encabezados (h2) */
 h2 {
     padding: 10px;
     font-size: 1.2em;
-    text-shadow: 5px 5px 5px rgb(104, 104, 104); /* Sombra en los títulos */
+    text-shadow: 5px 5px 5px rgb(89, 89, 89); /* Sombra en los títulos */
 }
 
 /* ===============================
@@ -295,7 +295,7 @@ footer {
     color: white;
     font-size: 0.7em;
     text-align: center;
-    background-image: linear-gradient(rgb(105, 172, 172), rgb(17, 112, 163)); /* Gradiente en el fondo */
+    background-image: linear-gradient(rgb(108, 191, 191), rgb(12, 113, 167)); /* Gradiente en el fondo */
     border-top: 6px solid black; /* Línea superior */
     padding: 15px 0;
     border-radius: 0px 0px 20px 20px; /* Bordes redondeados solo abajo */
@@ -383,3 +383,5 @@ footer a {
         margin: 0;
     }
 }
+
+
