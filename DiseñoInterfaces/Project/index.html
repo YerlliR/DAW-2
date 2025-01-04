@@ -5,17 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Club Económico</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
     </head>
 <body>
 
+<!-- Header con logo y nombre de la asociación -->
 <header>
-    <img src="logo.png">
+    <img src="img/logo.png">
     <p>Paiporta Economic Association</p>
 </header>
 
+<!-- Menú de navegación -->
 <nav>
-    <a href="#">Inicio</a>
+    <a href="index.html">Inicio</a>
     <div class="dropdown">
         <a href="#">Eventos</a>
         <div class="dropdown-content">
@@ -28,19 +30,21 @@
     <a href="#">Blog</a>
 
     <a href="librosRecomendados.html">Lecturas Recomendadas</a>
+    <a href="login.html" class="session">Iniciar Sesión</a>
+    <a href="signin.html" class="session">Registrarse</a>
 </nav>
 
-
+<!-- Sección de imagen de fondo -->
 <section class="full-width-section">
     <img style=" width: 100%;height: 100%; display: block; margin-bottom: 50px; max-height: 400px;  object-fit: cover;"
-    src="edificioBaner.png" alt="Imagen Edificios">
+    src="img/edificioBaner.png" alt="Imagen Edificios">
 </section>
 
 
 
+<!-- Contenido principal -->
 <section>
     <div class="content">
-
         <h2>
             Club Económico
         </h2>
@@ -61,9 +65,35 @@
     </div>
 </section>
 
+<!-- Sección de economistas favoritos -->
+<section>
+    <div class="econmistas">
+        <h2>
+            Nuestros Economistas Favoritos
+        </h2>
+
+        <div class="econmistas-container">
+            <div class="econmista1">
+                <img src="img/bastos.jpg" alt="Econmista 1">
+                <p>Miguel Anxo Bastos</p>
+            </div>
+            <div class="econmista2">
+                <img src="img/Rallo.jpg" alt="Econmista 2">
+                <p>Juan Ramón Rallo</p>
+            </div>
+            <div class="econmista3">
+                <img src="img/lacalle.webp" alt="Econmista 3">
+                <p>Daniel Lacalle</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de página -->
 <footer>
     <p>&copy; 2024 Club Económico. Todos los derechos reservados.</p>
 </footer>
 
 </body>
 </html>
+

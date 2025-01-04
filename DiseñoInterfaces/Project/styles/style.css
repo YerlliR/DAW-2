@@ -1,0 +1,343 @@
+/* ===============================
+   Estilos Globales
+   =============================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===============================
+   Estilos del Encabezado
+   =============================== */
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* ===============================
+   Estilos de la Navegaci n
+   =============================== */
+nav {
+    background-color: #0e0e0e;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2980b9;
+}
+
+/* ===============================
+   Estilos del Men  Desplegable
+   =============================== */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+}
+
+.dropdown-content a:nth-child(odd) {
+    background-color: #ecf0f1;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover > a {
+    color: #2980b9;
+}
+
+/* ===============================
+   Estilos de la Secci n
+   =============================== */
+section {
+    padding: 0 0;
+    background-color: #fff;
+}
+
+.content {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.content p b {
+    font-weight: 600;
+    color: #2980b9;
+}
+
+.content p br {
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   Estilos de la Secci n de Economistas
+   =============================== */
+.econmistas-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10rem;
+    margin-bottom: 100px;
+}
+
+.econmistas-container div {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 350px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 30px;
+}
+
+.econmistas-container div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.econmistas-container img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.econmistas-container p {
+    font-size: 1rem;
+    color: #555555;
+    margin: 0;
+}
+
+/* ===============================
+   Estilos del Pie de P gina
+   =============================== */
+footer {
+    background-color: #0e0e0e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #2980b9;
+}
+
+/* ===============================
+   Estilos de la Secci n de Libros Recomendados
+   =============================== */
+#libros-recomendados {
+    padding: 20px 20px;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.libro {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.libro-imagen {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.libro h3 {
+    color: #34495e;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.libro .autor {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.libro .descripcion {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ===============================
+   Estilos del Contenedor del Formulario
+   =============================== */
+.formulario {
+    background-image: linear-gradient(to bottom, #e5e5e5, #333);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 50px;
+}
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="url"],
+.form-container input[type="tel"],
+.form-container input[type="number"],
+.form-container input[type="range"],
+.form-container input[type="color"],
+.form-container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container input[type="submit"] {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #1f6391;
+}
+
+.form-container .volver {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container .volver:hover {
+    color: #1f6391;
+}
+
+/* ===============================
+   Estilos de la Validaci n del Formulario
+   =============================== */
+.form-container input:required {
+    border-left: 5px solid #2980b9;
+}
+
+.form-container input:focus:valid {
+    border-left: 5px solid #2ecc71;
+}
+
+.form-container input:focus:invalid {
+    border-left: 5px solid #e74c3c;
+}
+
+.form-container input:valid {
+    border-left: 5px solid #2ecc71;
+}
+
+.form-container input:invalid {
+    border-left: 5px solid #e74c3c;
+}
+

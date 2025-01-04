@@ -5,60 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Club Económico</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
+<!-- Encabezado con logo y nombre de la asociación -->
 <header>
-    <img src="logo.png">
+    <img src="img/logo.png">
     <p>Paiporta Economic Association</p>
 </header>
 
+<!-- Menú de navegación -->
 <nav>
     <a href="index.html">Inicio</a>
-    <a href="#">Eventos</a>
+    <div class="dropdown">
+        <a href="#">Eventos</a>
+        <div class="dropdown-content">
+            <a href="#">Eventos 2023</a>
+            <a href="#">Eventos 2024</a>
+            <a href="#">Nestros eventos</a>
+        </div>
+    </div>
+
     <a href="#">Blog</a>
-    <a href="#libros-recomendados">Lecturas Recomendadas</a>
+    <a href="librosRecomendados.html">Lecturas Recomendadas</a>
+    <a href="login.html" class="session">Iniciar Sesión</a>
+    <a href="signin.html" class="session">Registrarse</a>
 </nav>
 
+<!-- Sección de imagen de fondo -->
 <section class="full-width-section">
     <img style="width: 100%;height: 100%; display: block; margin-bottom: 50px; max-height: 400px;  object-fit: cover;"
-    src="fotoBanner2.jpg" alt="Imagen Edificios">
+    src="img/fotoBanner2.jpg" alt="Imagen Edificios">
 </section>
 
+<!-- Sección de recomendaciones de libros -->
 <section id="libros-recomendados" class="content">
     <h2>Libros Recomendados</h2>
     <div class="libros-grid">
+        <!-- Libro 1 -->
         <div class="libro">
-            <img src="PadreRicoPadrePobre.jpg" alt="Portada de Economía básica" class="libro-imagen">
+            <img src="img/PadreRicoPadrePobre.jpg" alt="Portada de Economía básica" class="libro-imagen">
             <h3>Padre Rico Padre Pobre</h3>
             <p class="autor">Robert T.Kiyosaki</p>
             <p class="descripcion">Padre rico, padre pobre es el libro de finanzas personales número uno en todo el mundo, el manual de Robert T. Kiyosaki que enseña a las personas a hacerse millonarias.</p>
         </div>
+        <!-- Libro 2 -->
         <div class="libro">
-            <img src="AntiMarx.webp" alt="Portada de La riqueza de las naciones" class="libro-imagen">
+            <img src="img/AntiMarx.webp" alt="Portada de La riqueza de las naciones" class="libro-imagen">
             <h3>Anti-Marx</h3>
             <p class="autor">Juan Ramón Rallo</p>
             <p class="descripcion">Juan Ramón Rallo reconstruye y destruye en dos tomos el pensamiento económico de Marx.</p>
         </div>
+        <!-- Libro 3 -->
         <div class="libro">
-            <img src="LaPsicologia.jpg" alt="Portada de Freakonomics" class="libro-imagen">
+            <img src="img/LaPsicologia.jpg" alt="Portada de Freakonomics" class="libro-imagen">
             <h3>La Psicologia Del Dinero</h3>
             <p class="autor">Morgan Housel</p>
             <p class="descripcion">En cuestiones de dinero, lo que importa no es lo listo que seas sino cómo te comportas.</p>
         </div>
+        <!-- Libro 4 -->
         <div class="libro">
-            <img src="piense%20y%20hagase%20rico.jpg" alt="Portada de El inversor inteligente" class="libro-imagen">
+            <img src="img/piense%20y%20hagase%20rico.jpg" alt="Portada de El inversor inteligente" class="libro-imagen">
             <h3> Piense Y Hágase Rico </h3>
             <p class="autor">Napoleon Hill</p>
             <p class="descripcion">"Piense y hágase rico", de Napoleon Hill, es un libro sobre finanzas personales que explica cómo las personas pueden alcanzar el éxito financiero.</p>
         </div>
+
     </div>
 </section>
 
+<!-- Pie de página -->
 <footer>
     <p>&copy; 2024 Club Económico. Todos los derechos reservados.</p>
 </footer>
 
 </body>
 </html>
+
