@@ -92,7 +92,7 @@ nav a:hover {
 }
 
 /* ===============================
-   Estilos de la Secci n
+   Estilos de la Sección
    =============================== */
 section {
     padding: 0 0;
@@ -132,7 +132,7 @@ h2 {
 }
 
 /* ===============================
-   Estilos de la Secci n de Economistas
+   Estilos de la Sección de Economistas
    =============================== */
 .econmistas-container {
     display: flex;
@@ -173,9 +173,40 @@ h2 {
     color: #555555;
     margin: 0;
 }
+/* ===============================
+   Imagen Logos Eventos
+   =============================== */
+.marcoAndorra{
+    width: 350px;
+    height: 350px;
+    border: 3px solid transparent; 
+    border-image-source: url('../img/negro.jpg'); 
+    border-image-slice: 10; 
+    border-image-repeat: repeat; 
+    background-color: rgb(58, 58, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+.marcoAndorra img{
+    width: 99%;
+    height: 99%;
+    object-fit: cover;
+    border-radius: 3%;
+}
 
 /* ===============================
-   Estilos del Pie de P gina
+   Multimedia
+   =============================== */
+.multimedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===============================
+   Estilos del Pie de Página
    =============================== */
 footer {
     background-color: #0e0e0e;
