@@ -1,5 +1,3 @@
-// scripts.js actualizado con drag and drop restaurado
-
 window.onload = function () {
     let eleccion = document.querySelectorAll("img");
     for (let i = 0; i < eleccion.length; i++) {
@@ -12,6 +10,8 @@ window.onload = function () {
         zona.addEventListener("dragover", allowDrop);
         zona.addEventListener("drop", drop);
     });
+
+    document.getElementById("reiniciar").addEventListener("click", reiniciarJuego);
 };
 
 function allowDrop(ev) {
@@ -28,6 +28,9 @@ function drop(ev) {
     jugar(idElement);
 }
 
+let puntosJugador = 0;
+let puntosMaquina = 0;
+
 function jugar(eleccionJugador) {
     const opciones = ["piedra", "papel", "tijera", "lagarto", "spock"];
     const eleccionMaquina = opciones[Math.floor(Math.random() * opciones.length)];
@@ -37,6 +40,10 @@ function jugar(eleccionJugador) {
 
     const resultado = determinarGanador(eleccionJugador, eleccionMaquina);
     actualizarMarcador(resultado);
+
+    if (puntosJugador === 3 || puntosMaquina === 3) {
+        mostrarGanador();
+    }
 }
 
 function actualizarSeleccionado(tipo, eleccion) {
@@ -59,10 +66,42 @@ function determinarGanador(jugador, maquina) {
 
 function actualizarMarcador(ganador) {
     if (ganador !== "empate") {
-        const barra = document.getElementById(ganador);
+        const barra = document.querySelector(`#${ganador} .punto`);
         const puntosActuales = barra.dataset.puntos ? parseInt(barra.dataset.puntos) : 0;
         const nuevosPuntos = puntosActuales + 1;
         barra.dataset.puntos = nuevosPuntos;
-        barra.style.height = `${nuevosPuntos * 10}px`;
+        barra.style.height = `${nuevosPuntos * 100}px`; // Ajustar la altura según el número de puntos
+
+        if (ganador === "jugador") {
+            puntosJugador++;
+        } else {
+            puntosMaquina++;
+        }
     }
+}
+
+function mostrarGanador() {
+    const mensaje = document.getElementById("mensaje-ganador");
+    const texto = document.getElementById("mensaje-texto");
+
+    if (puntosJugador === 3) {
+        texto.textContent = "¡Jugador gana!";
+    } else {
+        texto.textContent = "¡Máquina gana!";
+    }
+
+    mensaje.style.display = "block";
+}
+
+function reiniciarJuego() {
+    puntosJugador = 0;
+    puntosMaquina = 0;
+
+    document.querySelector("#jugador .punto").style.height = "0px";
+    document.querySelector("#maquina .punto").style.height = "0px";
+
+    document.querySelector("#jugador .punto").dataset.puntos = "0";
+    document.querySelector("#maquina .punto").dataset.puntos = "0";
+
+    document.getElementById("mensaje-ganador").style.display = "none";
 }
