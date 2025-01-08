@@ -38,12 +38,21 @@ function jugar(eleccionJugador) {
     actualizarSeleccionado("jugador", eleccionJugador);
     actualizarSeleccionado("maquina", eleccionMaquina);
 
-    const resultado = determinarGanador(eleccionJugador, eleccionMaquina);
-    actualizarMarcador(resultado);
+    // Mostrar ventana de cargando
+    document.getElementById("cargando").style.display = "block";
 
-    if (puntosJugador === 3 || puntosMaquina === 3) {
-        mostrarGanador();
-    }
+    // Agregar un retraso de 2 segundos antes de determinar el ganador
+    setTimeout(() => {
+        const resultado = determinarGanador(eleccionJugador, eleccionMaquina);
+        actualizarMarcador(resultado);
+
+        // Ocultar ventana de cargando
+        document.getElementById("cargando").style.display = "none";
+
+        if (puntosJugador === 3 || puntosMaquina === 3) {
+            mostrarGanador();
+        }
+    }, 2000);
 }
 
 function actualizarSeleccionado(tipo, eleccion) {
