@@ -9,7 +9,7 @@ function iniciarPartida (){
     $jugador1 = readline("Cual es tu nombre?");
     $simbolo1 = readline("Simbolo que quieres usar?");
     $jugador2 = readline("Cual es tu nombre?");
-    $simbolo2 = readline("Simbolo que quieres usar?");
+    $simbolo2 = readline("SimPDFbolo que quieres usar?");
     $condicion = 3;
     $tablero = [];
     $ultimo = 0;

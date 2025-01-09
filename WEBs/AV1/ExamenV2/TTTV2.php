@@ -3,22 +3,21 @@
  * @autor Sergio Ricart Alabau
  */
 
-class Jugador {
-    public $nombre;
-    public $simbolo;
-    public $victorias = 0;
-    public $derrotas = 0;
-    public $copas = 0;
-
-    public function __construct($nombre, $simbolo) {
-        $this->nombre = $nombre;
-        $this->simbolo = $simbolo;
-    }
-}
-
 function iniciarTorneo() {
-    $jugador1 = new Jugador(readline("Jugador 1, ¿cuál es tu nombre? "), readline("Jugador 1, ¿qué símbolo quieres usar? "));
-    $jugador2 = new Jugador(readline("Jugador 2, ¿cuál es tu nombre? "), readline("Jugador 2, ¿qué símbolo quieres usar? "));
+    $jugador1 = [
+        'nombre' => readline("Jugador 1, ¿cuál es tu nombre? "),
+        'simbolo' => readline("Jugador 1, ¿qué símbolo quieres usar? "),
+        'victorias' => 0,
+        'derrotas' => 0,
+        'copas' => 0
+    ];
+    $jugador2 = [
+        'nombre' => readline("Jugador 2, ¿cuál es tu nombre? "),
+        'simbolo' => readline("Jugador 2, ¿qué símbolo quieres usar? "),
+        'victorias' => 0,
+        'derrotas' => 0,
+        'copas' => 0
+    ];
 
     $rondas = 1;
 
@@ -27,13 +26,13 @@ function iniciarTorneo() {
         $ganador = iniciarPartida($jugador1, $jugador2);
 
         if ($ganador === 1) {
-            $jugador1->victorias++;
-            $jugador2->derrotas++;
-            echo "\n$jugador1->nombre gana la ronda $rondas!\n";
+            $jugador1['victorias']++;
+            $jugador2['derrotas']++;
+            echo "\n{$jugador1['nombre']} gana la ronda $rondas!\n";
         } elseif ($ganador === 2) {
-            $jugador2->victorias++;
-            $jugador1->derrotas++;
-            echo "\n$jugador2->nombre gana la ronda $rondas!\n";
+            $jugador2['victorias']++;
+            $jugador1['derrotas']++;
+            echo "\n{$jugador2['nombre']} gana la ronda $rondas!\n";
         } else {
             echo "\nLa ronda $rondas termina en empate.\n";
         }
@@ -41,12 +40,12 @@ function iniciarTorneo() {
         $rondas++;
     }
 
-    if ($jugador1->victorias > $jugador2->victorias) {
-        $jugador1->copas++;
-        echo "\n$jugador1->nombre gana el torneo!\n";
-    } elseif ($jugador2->victorias > $jugador1->victorias) {
-        $jugador2->copas++;
-        echo "\n$jugador2->nombre gana el torneo!\n";
+    if ($jugador1['victorias'] > $jugador2['victorias']) {
+        $jugador1['copas']++;
+        echo "\n{$jugador1['nombre']} gana el torneo!\n";
+    } elseif ($jugador2['victorias'] > $jugador1['victorias']) {
+        $jugador2['copas']++;
+        echo "\n{$jugador2['nombre']} gana el torneo!\n";
     } else {
         echo "\nEl torneo termina en empate.\n";
     }
@@ -54,10 +53,10 @@ function iniciarTorneo() {
     mostrarEstadisticas($jugador1, $jugador2);
 
     if (strtolower(readline("¿Quieres jugar otro torneo? (s/n): ")) === 's') {
-        $jugador1->victorias = 0;
-        $jugador2->victorias = 0;
-        $jugador1->derrotas = 0;
-        $jugador2->derrotas = 0;
+        $jugador1['victorias'] = 0;
+        $jugador2['victorias'] = 0;
+        $jugador1['derrotas'] = 0;
+        $jugador2['derrotas'] = 0;
         iniciarTorneo();
     }
 }
@@ -69,7 +68,7 @@ function iniciarPartida($jugador1, $jugador2) {
     while (true) {
         imprimirTablero($tablero);
         $jugadorActual = $turno % 2 === 0 ? $jugador1 : $jugador2;
-        echo "Turno de $jugadorActual->nombre ($jugadorActual->simbolo)\n";
+        echo "Turno de {$jugadorActual['nombre']} ({$jugadorActual['simbolo']})\n";
         $cordenadaX = readline("Dime la coordenada de las x: ");
         $cordenadaY = readline("Dime la coordenada de las y: ");
 
@@ -78,7 +77,7 @@ function iniciarPartida($jugador1, $jugador2) {
         }
 
         if (isset($tablero[$cordenadaX][$cordenadaY]) && $tablero[$cordenadaX][$cordenadaY] === " ") {
-            $tablero[$cordenadaX][$cordenadaY] = $jugadorActual->simbolo;
+            $tablero[$cordenadaX][$cordenadaY] = $jugadorActual['simbolo'];
             $ganador = verificarGanador($tablero);
             if ($ganador !== 0) {
                 imprimirTablero($tablero);
@@ -150,8 +149,8 @@ function tableroLleno($tablero) {
 
 function mostrarEstadisticas($jugador1, $jugador2) {
     echo "\nEstadísticas del torneo:\n";
-    echo "$jugador1->nombre - Victorias: $jugador1->victorias, Derrotas: $jugador1->derrotas, Copas: $jugador1->copas\n";
-    echo "$jugador2->nombre - Victorias: $jugador2->victorias, Derrotas: $jugador2->derrotas, Copas: $jugador2->copas\n";
+    echo "{$jugador1['nombre']} - Victorias: {$jugador1['victorias']}, Derrotas: {$jugador1['derrotas']}, Copas: {$jugador1['copas']}\n";
+    echo "{$jugador2['nombre']} - Victorias: {$jugador2['victorias']}, Derrotas: {$jugador2['derrotas']}, Copas: {$jugador2['copas']}\n";
 }
 
 iniciarTorneo();
