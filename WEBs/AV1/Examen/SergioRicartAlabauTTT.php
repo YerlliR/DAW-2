@@ -60,6 +60,8 @@ function iniciarTorneo($jugador1, $jugador2) {
         $jugador1['derrotas'] = 0;
         $jugador2['derrotas'] = 0;
         iniciarTorneo($jugador1,$jugador2);
+    }else{
+        echo "Gracias por jugar! \n";
     }
 }
 

@@ -12,11 +12,9 @@ $horario = [
 ];
 
 $horas = ["14:10", "15:05", "16:00", "16:55", "17:15", "18:10", "19:05", "20:00"];
-echo"|";
-echo str_repeat("-", 77) . "|" . "\n";
-printf("| %-10s | %-10s | %-10s | %-10s | %-10s | %-10s |\n", "Hora", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes");
-echo"|";
-echo str_repeat("-", 77) . "|" . "\n";
+echo "|" . str_repeat("-", 77) . "|" . "\n";
+printf("| %-10s | %-10s | %-10s | %-11s | %-10s | %-10s |\n", "Hora", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes");
+echo "|" . str_repeat("-", 77) . "|" . "\n";
 
 foreach ($horas as $hora) {
     printf("| %-10s ", $hora);
@@ -26,7 +24,6 @@ foreach ($horas as $hora) {
     echo "|\n";
 }
 
-echo"|";
-echo str_repeat("-", 77) . "|" . "\n";
+echo "|" . str_repeat("-", 77) . "|" . "\n";
 
 ?>

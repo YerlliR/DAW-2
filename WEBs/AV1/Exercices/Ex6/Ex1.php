@@ -25,7 +25,7 @@
             <input type="radio" name="saludo" id="saludo2" value="despedida"> Despedida
             <br>
             <br>
-            <input type="submit" name="" id="">
+            <input type="submit" name="submit" id="submit">
 
         </form>
     </body>
