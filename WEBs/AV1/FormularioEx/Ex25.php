@@ -15,6 +15,8 @@
     $extension_archivo = pathinfo($foto['name'], PATHINFO_EXTENSION);
     $tamano_archivo = $foto['size'];
     $errores = [];
+    $nombre_archivo = "";
+
 
     if (isset($_POST['validar'])) {
 
@@ -72,6 +74,7 @@
         }
 
         $nombre_archivo = uniqid() . '.' . $extension_archivo; 
+
         $ruta_destino = $directorio_destino . $nombre_archivo;
 
         if (!move_uploaded_file($foto['tmp_name'], $ruta_destino)) {
@@ -101,33 +104,32 @@
             echo "</ul>";
         }
 
-
-
-        
     }
 
     if (isset($_POST['resetear'])) {
-        $nombre = "";
-        $password = "";
-        $nivel_estudios = "";
-        $nacionalidad = "";
-        $idiomas = "";
-        $email = "";
-        $foto = "";
+        $nombre = '';
+        $password = '';
+        $nivel_estudios = '';
+        $nacionalidad = '';
+        $idiomas = [];
+        $email = '';
+        $nombre_archivo = '';
+        $foto = [];
     }
-
+    
     if (isset($_POST['enviar']) && $comprobar) {
+        $nombre_archivo = isset($_POST['nombre_archivo']) ? $_POST['nombre_archivo'] : '';
+    
         $url = "Ex25Resultados.php?nombre=" . urlencode($nombre) .
-               "&password=" . urlencode($password) .
-               "&nivel_estudios=" . urlencode($nivel_estudios) .
-               "&nacionalidad=" . urlencode($nacionalidad) .
-               "&idiomas=" . urlencode(implode(",", $idiomas)) .
-               "&email=" . urlencode($email) .
-               "&foto=" . urlencode($ruta_destino); 
+            "&password=" . urlencode($password) .
+            "&nivel_estudios=" . urlencode($nivel_estudios) .
+            "&nacionalidad=" . urlencode($nacionalidad) .
+            "&idiomas=" . urlencode(implode(",", $idiomas)) .
+            "&email=" . urlencode($email) .
+            "&foto=" . urlencode($nombre_archivo);
         header("Location: $url");
-        exit; 
+        exit;
     }
-
 ?>
 
 
@@ -174,13 +176,12 @@
             <input type="text" name="email" id="email" value="<?php echo $email ?>"><br><br>
 
             <label for="foto">Adjuntar Foto:</label><br>
-            <input type="hidden" name="fotoOculta" value="<?php echo $foto ?>">
+            <input type="hidden" name="nombre_archivo" value="<?php echo $nombre_archivo; ?>">
             <input type="file" name="foto" id="foto"><br><br>
 
             <input type="submit" name="validar" value="Validar">
-            <input type="reset" name="resetear" value="resetear">
+            <input type="submit" name="resetear" value="Resetear">
             <input type="submit" name="enviar" value="Enviar">
         </form>
     </body>
 </html>
-
