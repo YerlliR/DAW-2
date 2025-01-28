@@ -1,115 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Bootstrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Act 5.1-Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .header, .footer {
-            background-color: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-        }
-        .desktop, .tablet, .mobile {
-            background-color: #e9ecef;
-            padding: 15px;
-            margin-bottom: 10px;
-        }
-        .list-group-item {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            margin-bottom: 5px;
+        /* Estilo para agregar borde blanco a todas las columnas */
+        [class*="col-"] {
+            border: 3px solid white;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="row header">
-            <div class="col">
-                <h2>Header</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">1</li>
-                    <li class="list-group-item">2</li>
-                    <li class="list-group-item">3</li>
-                    <li class="list-group-item">4</li>
-                    <li class="list-group-item">d</li>
-                    <li class="list-group-item">c</li>
-                    <li class="list-group-item">b</li>
-                    <li class="list-group-item">a</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Desktop -->
-        <div class="row desktop">
-            <div class="col">
-                <h3>Desktop</h3>
-                <ul class="list-group">
-                    <li class="list-group-item">-f</li>
-                    <li class="list-group-item">-D</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="row footer">
-            <div class="col">
-                <h4>Footer</h4>
-                <h5>Tamafo sm</h5>
-                <h6>Header</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">1</li>
-                    <li class="list-group-item">2</li>
-                    <li class="list-group-item">3</li>
-                    <li class="list-group-item">4</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Tablet -->
-        <div class="row tablet">
-            <div class="col">
-                <h3>Tablet</h3>
-                <ul class="list-group">
-                    <li class="list-group-item">a</li>
-                    <li class="list-group-item">b</li>
-                    <li class="list-group-item">c</li>
-                    <li class="list-group-item">d</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Tamafo xs -->
+    <div class="container text-center">
         <div class="row">
-            <div class="col">
-                <h4>Tamafo xs</h4>
-                <h6>Header</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">1</li>
-                    <li class="list-group-item">2</li>
-                    <li class="list-group-item">3</li>
-                    <li class="list-group-item">4</li>
-                    <li class="list-group-item">a</li>
-                    <li class="list-group-item">b</li>
-                    <li class="list-group-item">c</li>
-                    <li class="list-group-item">d</li>
-                </ul>
+            <!-- Fila con una columna verde -->
+            <div class="col-12" style="background-color: green; height: 100px;"></div>
+        </div>
+        <div class="row">
+            <!-- Columna roja visible solo en dispositivos medianos en adelante -->
+            <div class="col-md-2 d-none d-sm-block" style="background-color: red;"></div>
+            <div class="col-md-10 col-12" style="border: 2px solid black;">
+                <div class="row">
+                    <!-- Columna púrpura -->
+                    <div class="col-12" style="background-color: purple; height: 100px;"></div>
+                    <!-- Dos columnas naranjas -->
+                    <div class="col-md-6 col-12" style="background-color: rgb(255, 170, 42); height: 170px;"></div>
+                    <div class="col-md-6 col-12" style="background-color: rgb(255, 170, 42); height: 170px;"></div>
+                </div>
+                
+                <div class="row">
+                    <!-- Varias columnas azules con diferentes tamaños según el dispositivo -->
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-4 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-4 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                    <div class="col-md-2 col-sm-4 col-6" style="background-color: blue; height: 100px;"></div>
+                </div>
             </div>
         </div>
-
-        <!-- Footer Mobile -->
-        <div class="row footer">
-            <div class="col">
-                <h6>Mobile</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">-D</li>
-                </ul>
-            </div>
+        <div class="row">
+            <!-- Fila con una columna verde -->
+            <div class="col-12" style="background-color: green; height: 40px;"></div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
