@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pokémon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="cuadriculaPokemons">
+            <div v-for="(pokemon, index) in pokemons" :key="index" class="cajaPokemon">
+                <img :src="getPokemonImage(index + 1)" :alt="pokemon.name" class="pokemon-img">
+                <p>{{ pokemon.name.toUpperCase() }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    pokemons: []
+                };
+            },
+            mounted() {
+                this.fetchPokemons();
+            },
+            methods: {
+                async fetchPokemons() {
+                    let url = "https://pokeapi.co/api/v2/pokemon?limit=1025";
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    this.pokemons = data.results;
+                },
+                getPokemonImage(id) {
+                    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
