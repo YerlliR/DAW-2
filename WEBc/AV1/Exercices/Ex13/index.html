@@ -10,20 +10,30 @@
 <body>
     <div id="app">
         <div class="cuadriculaPokemons">
-            <div v-for="(pokemon, index) in pokemons" :key="index" class="cajaPokemon">
+            <div v-for="(pokemon, index) in pokemons" :key="index" 
+                 class="cajaPokemon" 
+                 :class="{'seleccionado': isPokemonSeleccionado(pokemon.url)}"
+                 @click="pokemonClicked(pokemon.url)">
                 <img :src="getPokemonImage(index + 1)" :alt="pokemon.name" class="pokemon-img">
                 <p>{{ pokemon.name.toUpperCase() }}</p>
             </div>
         </div>
+
+
+        <button v-if="pokemonsSeleccionados.length === 5" @click="continuar" class="botonContinuar">
+            Continuar
+        </button>
     </div>
 
     <script>
+        let pokemonsSeleccionados = [];
         const { createApp } = Vue;
 
         createApp({
             data() {
                 return {
-                    pokemons: []
+                    pokemons: [],
+                    pokemonsSeleccionados: pokemonsSeleccionados
                 };
             },
             mounted() {
@@ -38,6 +48,27 @@
                 },
                 getPokemonImage(id) {
                     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+                },
+                pokemonClicked(pokemonUrl) {
+                    const pokemonId = this.extractPokemonId(pokemonUrl);
+                    if (this.pokemonsSeleccionados.includes(pokemonId)) {
+                        this.pokemonsSeleccionados = this.pokemonsSeleccionados.filter(id => id !== pokemonId);
+                    } else if (this.pokemonsSeleccionados.length < 5) {
+                        this.pokemonsSeleccionados.push(pokemonId);
+                    } else {
+                        alert("Ya has seleccionado 5 pokemons");
+                    }
+                },
+                extractPokemonId(url) {
+                    const parts = url.split('/');
+                    return parts[parts.length - 2]; 
+                },
+                isPokemonSeleccionado(url) {
+                    const pokemonId = this.extractPokemonId(url);
+                    return this.pokemonsSeleccionados.includes(pokemonId);
+                },
+                continuar() {
+                    alert("¡Continuando con la selección de Pokémon!");
                 }
             }
         }).mount("#app");
