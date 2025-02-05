@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(129, 47, 0);
-    color: white;
+    background-color: #121212; /* Un fondo más oscuro para resaltar los elementos */
+    color: #e0e0e0; /* Color de texto gris claro */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -12,21 +12,17 @@ body {
     height: 170px;
     display: inline-block;
     vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra más suave y destacada */
     transition-duration: 0.3s;
-    -webkit-transition-property: transform;
     transition-property: transform;
-    border-radius: 6px;
-    background-color: #885e02;
+    border-radius: 8px;
+    background-color: #ff6e6e; /* Un rosa cálido en lugar de un rosa muy fuerte */
 }
 
 .cajaPokemon:hover {
-    background-color: rgb(61, 61, 61);
+    background-color: #ff3385; /* Un color de hover que resalta más */
     cursor: pointer;
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -34,17 +30,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     padding: 20px;
 }
 
 .pokemon-img {
     width: 100px;
     height: 100px;
+    border-radius: 6px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; /* Asegura que la imagen se recorte bien en el contenedor */
 }
 
 .cajaPokemon.seleccionado {
-    background-color: #ff0000; 
+    background-color: #8c1aff; /* Un morado suave para los elementos seleccionados */
 }
 
 .botonContinuar {
@@ -52,16 +50,17 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: white;
+    padding: 12px 25px;
+    background-color: #292929; /* Un color oscuro que contraste con el texto */
+    color: #ffffff;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     z-index: 1000;
+    border: 2px solid #ffffff;
 }
 
 .botonContinuar:hover {
-    background-color: #45a049;
+    background-color: #ff00d4; /* Un rosa eléctrico para el hover */
 }

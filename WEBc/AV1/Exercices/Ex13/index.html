@@ -19,9 +19,10 @@
             </div>
         </div>
 
-
         <button v-if="pokemonsSeleccionados.length === 5" @click="continuar" class="botonContinuar">
-            Continuar
+            <a href="combatePokemon.html">
+                Continuar
+            </a>
         </button>
     </div>
 
@@ -41,7 +42,7 @@
             },
             methods: {
                 async fetchPokemons() {
-                    let url = "https://pokeapi.co/api/v2/pokemon?limit=1025";
+                    let url = "https://pokeapi.co/api/v2/pokemon?limit=151";
                     const response = await fetch(url);
                     const data = await response.json();
                     this.pokemons = data.results;
@@ -68,7 +69,7 @@
                     return this.pokemonsSeleccionados.includes(pokemonId);
                 },
                 continuar() {
-                    alert("¡Continuando con la selección de Pokémon!");
+                    
                 }
             }
         }).mount("#app");
