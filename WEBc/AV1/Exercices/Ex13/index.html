@@ -20,9 +20,7 @@
         </div>
 
         <button v-if="pokemonsSeleccionados.length === 5" @click="continuar" class="botonContinuar">
-            <a href="combatePokemon.html">
-                Continuar
-            </a>
+            Continuar
         </button>
     </div>
 
@@ -69,7 +67,8 @@
                     return this.pokemonsSeleccionados.includes(pokemonId);
                 },
                 continuar() {
-                    
+                    localStorage.setItem('pokemonsSeleccionados', JSON.stringify(this.pokemonsSeleccionados));
+                    window.location.href = 'combatePokemon.html';
                 }
             }
         }).mount("#app");

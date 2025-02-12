@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate Pokémon</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Asegúrate de que el archivo CSS esté en la ruta correcta -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <center>
+            <h1>Combate Pokémon</h1>
+
+        </center>
+
+        <!-- Mostrar los Pokémon seleccionados -->
+        <div class="seleccionar-pokemon">
+            <center>
+                <h2>Selecciona un Pokémon para enfrentar en combate</h2>
+
+            </center>
+            <div class="cuadriculaPokemons">
+                <div v-for="id in pokemonsSeleccionados" :key="id" class="cajaPokemon cajaGrande"
+                     :class="{'seleccionado': id === pokemonElegido}"
+                     @click="seleccionarPokemon(id)">
+                    <img :src="getPokemonImage(id)" :alt="'Pokemon ' + id" class="pokemon-img fotoGrande">
+                    <p>ID: {{ id }}</p>
+                </div>
+            </div>
+        </div>
+
+        <button v-if="pokemonElegido" @click="enfrentarPokemonAleatorio" class="botonContinuar">
+            Enfrentar a Pokémon 
+        </button>
+
+        <!-- Contenedor del modal -->
+        <div v-if="modalVisible" class="modal">
+            <div class="modal-content">
+                <span @click="cerrarModal" class="cerrar">&times;</span>
+                <h2>¡Combate Pokémon!</h2>
+                <div class="combate">
+                    <div class="cuadriculaPokemons">
+                        <div class="cajaPokemon">
+                            <img :src="getPokemonImage(pokemonElegido)" :alt="'Pokemon ' + pokemonElegido" class="pokemon-img">
+                            <p>ID: {{ pokemonElegido }}</p>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="cajaPokemon">
+                            <img :src="getPokemonImage(pokemonAleatorio)" :alt="'Pokemon ' + pokemonAleatorio" class="pokemon-img">
+                            <p>ID: {{ pokemonAleatorio }}</p>
+                        </div>
+                    </div>
+                </div>
+                <button @click="cerrarModal" class="botonCerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    pokemonsSeleccionados: [], // IDs de los Pokémon seleccionados
+                    pokemonElegido: null,      // ID del Pokémon elegido para combatir
+                    pokemonAleatorio: null,    // ID del Pokémon aleatorio
+                    modalVisible: false        // Estado para mostrar u ocultar el modal
+                };
+            },
+            mounted() {
+                this.loadPokemonsSeleccionados();
+            },
+            methods: {
+                // Cargar los Pokémon seleccionados desde localStorage
+                loadPokemonsSeleccionados() {
+                    const pokemons = localStorage.getItem('pokemonsSeleccionados');
+                    if (pokemons) {
+                        this.pokemonsSeleccionados = JSON.parse(pokemons);
+                    }
+                },
+                // Seleccionar un Pokémon para combatir
+                seleccionarPokemon(id) {
+                    this.pokemonElegido = id;
+                },
+                // Generar un Pokémon aleatorio para enfrentar
+                enfrentarPokemonAleatorio() {
+                    this.pokemonAleatorio = Math.floor(Math.random() * 151) + 1; // Números del 1 al 151
+                    this.modalVisible = true; // Mostrar el modal después de elegir el Pokémon aleatorio
+                },
+                // Obtener la imagen de un Pokémon por su ID
+                getPokemonImage(id) {
+                    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+                },
+                // Cerrar el modal
+                cerrarModal() {
+                    this.modalVisible = false;
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
