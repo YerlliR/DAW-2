@@ -1,0 +1,129 @@
+.contenedor {
+    margin: 0 auto;
+    row-gap: 8px;
+    display: grid;
+    max-width: 1400px;
+    padding: 12px;
+    column-gap: 8px;
+    grid-template: 
+        "menu menu menu" auto
+        "encabezado encabezado encabezado" auto
+        "promocion-superior promocion-superior promocion-superior" auto
+        "lateral contenido-principal contenido-principal" auto
+        "promocion-inferior promocion-inferior promocion-inferior" auto
+        "pie-pagina pie-pagina pie-pagina" auto / 
+        minmax(200px, 1fr) 4fr 1fr;
+}
+
+.promocion-inferior {
+    font-size: 1.2rem;
+    padding: 1.25rem;
+    grid-area: promocion-inferior;
+    color: #ffffff;
+    background-color: #666666;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.contenido-principal {
+    line-height: 1.6;
+    padding: 1.25rem;
+    grid-area: contenido-principal;
+    border-left: 3px solid #333;
+    background-color: #ffffff;
+}
+
+.menu {
+    padding: 1rem;
+    gap: 8px;
+    background-color: #f5f5f5;
+    display: grid;
+    grid-area: menu;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.pie-pagina {
+    gap: 8px;
+    display: grid;
+    grid-area: pie-pagina;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+    background-color: #2a2a2a;
+}
+
+.caja-pie {
+    text-align: center;
+    padding: 0.75rem;
+    background-color: #404040;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.promocion-superior {
+    padding: 1.8rem;
+    color: #ffffff;
+    grid-area: promocion-superior;
+    font-weight: 600;
+    background-color: #404040;
+    font-size: 1.4rem;
+}
+
+.barra-lateral {
+    background-color: #e6e6e6;
+    grid-area: lateral;
+    font-weight: 600;
+    padding: 1.25rem;
+}
+
+.enlace-menu {
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0.75rem;
+    color: #333;
+}
+
+.encabezado {
+    font-weight: 600;
+    padding: 2.5rem;
+    background-color: #2c2c2c;
+    grid-area: encabezado;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.enlace-menu:hover {
+    background-color: #d1d1d1;
+}
+
+@media screen and (max-width: 800px) {
+    .pie-pagina {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido-principal {
+        border-top: 3px solid #333;
+        border-left: none;
+    }
+
+    .contenedor {
+        grid-template:
+            "menu" auto
+            "encabezado" auto
+            "promocion-superior" auto
+            "lateral" auto
+            "contenido-principal" auto
+            "promocion-inferior" auto
+            "pie-pagina" auto /
+            1fr;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
