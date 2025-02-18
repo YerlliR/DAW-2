@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Inicio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .row > div[class*="col-"] {
+      border: 1px solid black;
+      text-align: center;
+      height: 100px;
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="row header">
+      <div class="col-12 bg-success">Header</div>
+    </div>
+    
+    <div class="row mt-1">
+    <div class="col-md-3 col-sm-3 col-6 bg-primary offset-md-3" style="height: 100px; width: 100px;">1</div>
+    <div class="col-md-3 col-sm-3 col-6 bg-primary" style="height: 100px; width: 100px;">2</div>
+    <div class="w-100 d-none d-md-block"></div>
+    <div class="col-md-3 col-sm-3 col-6 bg-primary" style="height: 100px; width: 100px;">3</div>
+    <div class="col-md-3 col-sm-3 col-6 offset-md-6 bg-primary" style="height: 100px; width: 100px;">4</div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-12 d-none d-sm-block d-md-none bg-info">Tablet</div>
+    </div>
+    <div class="row mt-1 gx-3">
+    <div class="col-6 col-sm-3 order-4 order-md-1 bg-secondary" style="width: 100px; height: 100px;">d</div>
+    <div class="col-6 col-sm-3 order-3 order-md-2 bg-secondary" style="width: 100px; height: 100px;">c</div>
+    <div class="col-6 col-sm-3 order-2 order-md-3 bg-secondary" style="width: 100px; height: 100px;">b</div>
+    <div class="col-6 col-sm-3 order-1 order-md-4 bg-secondary" style="width: 100px; height: 100px;">a</div>
+    </div>
+    
+    <div class="row mt-1">
+      <div class="col-12 d-none d-md-block bg-info">Desktop</div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-12 d-sm-none bg-info">Mobile</div>
+    </div>
+    
+    <div class="row mt-1 gx-3">
+        <div class="col-12 col-sm-6 col-md-3 offset-md-3 bg-warning" style="width: 100px; height: 100px;">:C</div>
+        <div class="d-none d-sm-block col-sm-6 col-md-3 offset-md-0 bg-warning text-center border border-dark" style="width: 100px; height: 100px;">:D</div>
+    </div>
+    
+    <div class="row mt-1">
+      <div class="col-12 footer bg-success">Footer</div>
+    </div>
+</body>
+</html>
