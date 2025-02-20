@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Sergio Ricart Alabau
+ */
+
 require_once 'Mamifero.php';
 
 // Clase Perro que extiende de Mamifero
@@ -33,6 +37,35 @@ class Perro extends Mamifero {
     public function getNombre() {
         return $this->nombre ?? "";
     }
+    // Método para obtener la raza del perro
+    public function getRaza() {
+        return $this->raza;
+    }
+
+    // Método para establecer la raza del perro
+    public function setRaza($raza) {
+        $this->raza = $raza;
+    }
+
+    // Método para establecer el nombre del perro
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    // Método para simular el amamantamiento del perro
+    public function amamantar() {
+        echo "Perro " . $this->getNombre() . ": " . parent::amamantar();
+    }
+
+    // Método para simular que el perro se duerme
+    public function dormirse() {
+        echo "Perro " . $this->getNombre() . ": " . parent::dormirse();
+    }
+
+    // Método para simular que el perro se muere
+    public function morirse() {
+        echo "Perro " . $this->getNombre() . ": " . parent::morirse();
+    }
 
     // Método para simular el ladrido del perro
     public function ladra() {
@@ -40,11 +73,11 @@ class Perro extends Mamifero {
     }
 
     // Método para simular la alimentación del perro
-    public function alimentarse() {
-        echo "Perro " . $this->getNombre() . ": Estoy comiendo carne<br>";
+    public function alimentarse($comida = "carne") {
+        echo "Perro " . $this->getNombre() . ": " . parent::alimentarse($comida);
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . ", en concreto un Perro, con raza " . $this->raza . 
                ($this->nombre ? " y mi nombre es " . $this->nombre : " y no tengo nombre") . "<br>";

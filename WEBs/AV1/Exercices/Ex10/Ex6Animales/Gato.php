@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @author Sergio Ricart Alabau
+ */
 require_once 'Mamifero.php';
 
 // Clase Gato que extiende de Mamifero
@@ -35,17 +38,38 @@ class Gato extends Mamifero {
         return $this->nombre ?? ""; // Retorna el nombre del gato o una cadena vacía si no tiene nombre
     }
 
+    // Método para establecer el nombre del gato
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    // Método para que el gato amamante
+    public function amamantar() {
+        echo "Gato " . $this->getNombre() . ":" . parent::amamantar();
+    }
+
+    // Método para que el gato se duerma
+    public function dormirse() {
+        echo "Gato " . $this->getNombre() . ": " . parent::dormirse();
+    }
+
+    // Método para que el gato muera
+    public function morirse() {
+        echo "Gato " . $this->getNombre() . ": " . parent::morirse();
+    }
+
     // Método para que el gato maulle
     public function maulla() {
         echo "Gato " . $this->getNombre() . ": Miauuuu<br>"; // Imprime el maullido del gato
     }
 
     // Método para que el gato se alimente
-    public function alimentarse() {
-        echo "Gato " . $this->getNombre() . ": Estoy comiendo pescado<br>"; // Imprime que el gato está comiendo
+    public function alimentarse($comida = "pescado") {
+        echo "Gato " . $this->getNombre() . ": " . parent::alimentarse($comida);
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . ", en concreto un Gato, con raza " . $this->raza . 
                ($this->nombre ? " y mi nombre es " . $this->nombre : " y no tengo nombre") . "<br>";

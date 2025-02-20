@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Sergio Ricart Alabau
+ */
 require_once "Ave.php";
 
 // Clase Canario que extiende de la clase Ave
@@ -40,12 +43,28 @@ class Canario extends Ave {
         echo "Canario " . $this->getNombre() . ": Pio pio pio<br>";
     }
 
-    // Método para que el canario se alimente
-    public function alimentarse() {
-        echo "Canario " . $this->getNombre() . ": Estoy comiendo alpiste<br>";
+    
+    // Método para que el canario ponga un huevo
+    public function ponerHuevo() {
+        echo "Canario " . $this->getNombre() . ": " . parent::ponerHuevo();
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+    // Método para que el canario se duerma
+    public function dormirse() {
+        echo "Canario " . $this->getNombre() . ": " . parent::dormirse();
+    }
+
+    // Método para que el canario se muera
+    public function morirse() {
+        echo "Canario " . $this->getNombre() . ": " . parent::morirse();
+    }
+
+    // Método para que el canario se alimente
+    public function alimentarse($comida = "alpiste") {
+        echo "Canario " . $this->getNombre() . ": " . parent::alimentarse($comida);
+    }
+
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . ", en concreto un Canario, con sexo " . $this->getSexoTexto() . 
                ($this->nombre ? ", llamado " . $this->nombre : "") . "<br>";

@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Sergio Ricart Alabau
+ */
+
 require_once "Animal.php";
 
 // Clase Lagarto que extiende de la clase Animal
@@ -41,12 +46,23 @@ class Lagarto extends Animal {
         echo "Lagarto " . $this->getNombre() . ": Estoy tomando el Sol<br>";
     }
 
-    // Método para simular que el lagarto se está alimentando
-    public function alimentarse() {
-        echo "Lagarto " . $this->getNombre() . ": Estoy comiendo insectos<br>";
+
+    // Método para simular que el lagarto se está durmiendo
+    public function dormirse() {
+        echo "Lagarto " . $this->getNombre() . ": ". parent::dormirse();
     }
 
-    // Método mágico __toString para representar el objeto Lagarto como una cadena
+    // Método para simular que el lagarto se ha muerto
+    public function morirse() {
+        echo "Lagarto " . $this->getNombre() . ":" . parent::morirse();
+    }
+
+    // Método para simular que el lagarto se está alimentando
+    public function alimentarse($comida = "insectos") {
+        echo "Lagarto " . $this->getNombre() . ": " . parent::alimentarse($comida);
+    }
+
+    // Método __toString para representar el objeto Lagarto como una cadena
     public function __toString() {
         return parent::__toString() . ", en concreto un Lagarto" . 
                ($this->nombre ? ", llamado " . $this->nombre : "") . "<br>";

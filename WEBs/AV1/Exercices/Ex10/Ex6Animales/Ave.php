@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Sergio Ricart Alabau
+ */
 require_once "Animal.php";
 
 // Clase abstracta Ave que hereda de Animal
@@ -27,12 +30,12 @@ abstract class Ave extends Animal {
     }
 
     // Método para simular la muerte del ave y decrementar el contador de aves
-    public function morirse() {
+    public function morirse(){
         parent::morirse();
         self::$totalAves--;
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . "un ave";
     }

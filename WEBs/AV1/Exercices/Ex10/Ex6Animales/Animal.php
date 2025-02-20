@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Sergio Ricart Alabau
+ */
 abstract class Animal {
     // Propiedad protegida para almacenar el sexo del animal
     protected $sexo;
@@ -23,7 +26,9 @@ abstract class Animal {
     }
 
     // Método abstracto que debe ser implementado por las subclases para definir cómo se alimenta el animal
-    public abstract function alimentarse();
+    public  function alimentarse($comida = null){
+        return "Estoy comiendo " . $comida;
+    }
 
     // Método para simular que el animal muere y decrementar el conteo total de animales
     public function morirse() {
@@ -35,8 +40,11 @@ abstract class Animal {
     protected function getSexoTexto() {
         return $this->sexo === "H" ? "HEMBRA" : "MACHO";
     }
+    public function setSexo($sexo) {
+        $this->sexo = $sexo;
+    }
 
-    // Método mágico para devolver una representación en cadena del animal
+    // Método para devolver una representación en cadena del animal
     public function __toString() {
         return "Soy un Animal ";
     }

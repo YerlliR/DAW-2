@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Sergio Ricart Alabau
+ */
+
 require_once 'Ave.php';
 
 // Clase Pinguino que extiende de Ave
@@ -41,11 +46,28 @@ class Pinguino extends Ave {
     }
 
     // Método para simular que el pingüino se está alimentando
-    public function alimentarse() {
-        echo "Pingüino " . $this->getNombre() . ": Estoy comiendo peces<br>";
+    public function alimentarse($comida = "peces") {
+        echo "Pingüino " . $this->getNombre() . ": " . parent::alimentarse($comida);
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+    // Método para simular que el pingüino se está durmiendo
+    public function dormirse() {
+        echo "Pingüino " . $this->getNombre() . ":" . parent::dormirse();
+    }
+
+    // Método para simular que el pingüino está poniendo un huevo
+    public function ponerHuevo() {
+        echo "Pingüino " . $this->getNombre() . ": "  . parent::ponerHuevo();
+    }
+
+    // Método para simular que el pingüino se está muriendo
+    public function morirse() {
+        echo "Pingüino " . $this->getNombre() . ":"  . parent::morirse();
+    }
+
+
+
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . ", en concreto un Pingüino" . 
                ($this->nombre ? ", llamado " . $this->nombre : "") . "<br>";

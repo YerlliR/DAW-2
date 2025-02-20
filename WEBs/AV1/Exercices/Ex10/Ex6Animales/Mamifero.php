@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Sergio Ricart Alabau
+ */
+
 require_once "Animal.php";
 
 // Clase abstracta Mamifero que extiende de Animal
@@ -17,6 +22,10 @@ abstract class Mamifero extends Animal {
         return "Hay un total de " . self::$totalMamiferos . " mamíferos<br>";
     }
 
+    public static function setTotalMamiferos($total) {
+        self::$totalMamiferos = $total;
+    }
+
     // Método para amamantar, solo si el mamífero es hembra
     public function amamantar() {
         if ($this->sexo === "H") {
@@ -32,7 +41,7 @@ abstract class Mamifero extends Animal {
         self::$totalMamiferos--;
     }
 
-    // Método mágico __toString para representar el objeto como una cadena
+    // Método __toString para representar el objeto como una cadena
     public function __toString() {
         return parent::__toString() . "un mamífero";
     }
