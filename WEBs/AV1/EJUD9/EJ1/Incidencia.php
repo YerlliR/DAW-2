@@ -1,7 +1,6 @@
 <?php
 /**
- * @author Student
- * Ej1UD9 - Incidencia.php
+ * @author Sergio Ricart
  */
 require_once "../traitDB.php";
 
