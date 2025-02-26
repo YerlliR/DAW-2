@@ -15,7 +15,7 @@ class Incidencia {
     private $resolucion;
     private static $contador = 0;
 
-    private static $pendientes;
+    private static $pendientes = 0;
 
 
     /**
@@ -37,7 +37,7 @@ class Incidencia {
         self::$contador++;
         
         // Crear la incidencia con estado "abierta"
-        $incidencia = new Incidencia( $puesto, $problema);
+        $incidencia = new Incidencia($puesto, $problema);
         
         // Guardar en la base de datos
         $sql = "INSERT INTO INCIDENCIA (CODIGO, ESTADO, PUESTO, PROBLEMA, RESOLUCION) VALUES (?, ?, ?, ?, ?)";
@@ -57,14 +57,17 @@ class Incidencia {
      * Método para resolver una incidencia
      */
     public function resuelve($resolucion) {
+        // Si la incidencia estaba abierta, decrementar pendientes
+        if ($this->estado === "abierta") {
+            self::$pendientes--;
+        }
+        
         $this->estado = "resuelta";
         $this->resolucion = $resolucion;
         
         // Actualizar en la base de datos
         $this->actualizaIncidencia("resuelta", $this->problema, $resolucion, $this->puesto);
         
-        //ACTUALIZAR EL OBJETO
-
         return $this;
     }
 
@@ -72,6 +75,9 @@ class Incidencia {
      * Método para actualizar una incidencia
      */
     public function actualizaIncidencia($estado = "", $problema = "", $resolucion = "", $puesto = "") {
+        // Verificar si cambia el estado de abierta a otra cosa
+        $cambioEstado = ($this->estado === "abierta" && !empty($estado) && $estado !== "abierta");
+        
         // Si los parámetros están vacíos, mantener los valores actuales
         if (empty($estado)) $estado = $this->estado;
         if (empty($problema)) $problema = $this->problema;
@@ -83,6 +89,11 @@ class Incidencia {
         $this->problema = $problema;
         $this->resolucion = $resolucion;
         $this->puesto = $puesto;
+        
+        // Si cambia de abierta a otro estado, decrementar pendientes
+        if ($cambioEstado) {
+            self::$pendientes--;
+        }
         
         // Actualizar en la base de datos
         $sql = "UPDATE INCIDENCIA SET ESTADO = ?, PUESTO = ?, PROBLEMA = ?, RESOLUCION = ? WHERE CODIGO = ?";
@@ -102,6 +113,11 @@ class Incidencia {
      * Método para borrar una incidencia
      */
     public function borraIncidencia() {
+        // Si la incidencia estaba abierta, decrementar pendientes
+        if ($this->estado === "abierta") {
+            self::$pendientes--;
+        }
+        
         $sql = "DELETE FROM INCIDENCIA WHERE CODIGO = ?";
         $parametros = [$this->codigo];
         
@@ -160,13 +176,10 @@ class Incidencia {
 
     /**
      * Método estático para obtener el número de incidencias pendientes
+     * Usa la variable estática en lugar de consultar la base de datos
      */
     public static function getPendientes() {
-        $sql = "SELECT COUNT(*) as total FROM INCIDENCIA WHERE ESTADO = 'abierta'";
-        
-        $resultado = self::queryPreparadaDB($sql, []);
-        
-        return $resultado[0]['total'];
+        return self::$pendientes;
     }
 
     /**
@@ -198,8 +211,18 @@ class Incidencia {
 
     /**
      * Set the value of estado
+     * Actualiza el contador de pendientes si es necesario
      */ 
     public function setEstado($estado) {
+        // Si cambia de abierta a otra cosa, decrementar pendientes
+        if ($this->estado === "abierta" && $estado !== "abierta") {
+            self::$pendientes--;
+        }
+        // Si cambia de otra cosa a abierta, incrementar pendientes
+        else if ($this->estado !== "abierta" && $estado === "abierta") {
+            self::$pendientes++;
+        }
+        
         $this->estado = $estado;
     }
 
@@ -245,7 +268,4 @@ class Incidencia {
         $this->resolucion = $resolucion;
     }
 }
-
 ?>
-
-
