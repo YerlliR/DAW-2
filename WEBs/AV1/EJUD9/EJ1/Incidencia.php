@@ -17,9 +17,6 @@ class Incidencia {
     private static $pendientes = 0;
 
 
-    /**
-     * Constructor de la clase Incidencia
-     */
     public function __construct($puesto ,$problema) {
         $this->codigo = self::$contador;
         $this->estado = "abierta";
@@ -28,17 +25,11 @@ class Incidencia {
         self::$pendientes++;
     }
 
-    /**
-     * Método estático para crear una nueva incidencia
-     */
     public static function creaIncidencia($puesto, $problema) {
-        // Generar un código único para la incidencia
         self::$contador++;
         
-        // Crear la incidencia con estado "abierta"
         $incidencia = new Incidencia($puesto, $problema);
         
-        // Guardar en la base de datos
         $sql = "INSERT INTO INCIDENCIA (CODIGO, ESTADO, PUESTO, PROBLEMA, RESOLUCION) VALUES (?, ?, ?, ?, ?)";
         $parametros = [$incidencia->codigo, $incidencia->estado, $incidencia->puesto, $incidencia->problema, $incidencia->resolucion];
         
@@ -46,17 +37,12 @@ class Incidencia {
         
         echo "Incidencia con código {$incidencia->codigo} creada correctamente.<br>";
         
-        // Mostrar la incidencia creada
         self::leeIncidencia($incidencia->codigo);
         
         return $incidencia;
     }
 
-    /**
-     * Método para resolver una incidencia
-     */
     public function resuelve($resolucion) {
-        // Si la incidencia estaba abierta, decrementar pendientes
         if ($this->estado === "abierta") {
             self::$pendientes--;
         }
@@ -64,37 +50,28 @@ class Incidencia {
         $this->estado = "resuelta";
         $this->resolucion = $resolucion;
         
-        // Actualizar en la base de datos
         $this->actualizaIncidencia("resuelta", $this->problema, $resolucion, $this->puesto);
         
         return $this;
     }
 
-    /**
-     * Método para actualizar una incidencia
-     */
     public function actualizaIncidencia($estado = "", $problema = "", $resolucion = "", $puesto = "") {
-        // Verificar si cambia el estado de abierta a otra cosa
         $cambioEstado = ($this->estado === "abierta" && !empty($estado) && $estado !== "abierta");
         
-        // Si los parámetros están vacíos, mantener los valores actuales
         if (empty($estado)) $estado = $this->estado;
         if (empty($problema)) $problema = $this->problema;
         if (empty($resolucion)) $resolucion = $this->resolucion;
         if (empty($puesto)) $puesto = $this->puesto;
         
-        // Actualizar propiedades del objeto
         $this->estado = $estado;
         $this->problema = $problema;
         $this->resolucion = $resolucion;
         $this->puesto = $puesto;
         
-        // Si cambia de abierta a otro estado, decrementar pendientes
         if ($cambioEstado) {
             self::$pendientes--;
         }
         
-        // Actualizar en la base de datos
         $sql = "UPDATE INCIDENCIA SET ESTADO = ?, PUESTO = ?, PROBLEMA = ?, RESOLUCION = ? WHERE CODIGO = ?";
         $parametros = [$this->estado, $this->puesto, $this->problema, $this->resolucion, $this->codigo];
         
@@ -102,17 +79,13 @@ class Incidencia {
         
         echo "Incidencia con código {$this->codigo} modificada correctamente.<br>";
         
-        // Mostrar la incidencia actualizada
         self::leeIncidencia($this->codigo);
         
         return $this;
     }
 
-    /**
-     * Método para borrar una incidencia
-     */
+
     public function borraIncidencia() {
-        // Si la incidencia estaba abierta, decrementar pendientes
         if ($this->estado === "abierta") {
             self::$pendientes--;
         }
@@ -124,15 +97,12 @@ class Incidencia {
         
         echo "Incidencia con código {$this->codigo} borrada correctamente.<br>";
         
-        // Mostrar todas las incidencias
         self::leeTodasIncidencias();
         
         return true;
     }
 
-    /**
-     * Método estático para leer una incidencia concreta
-     */
+
     public static function leeIncidencia($codigo) {
         $sql = "SELECT * FROM INCIDENCIA WHERE CODIGO = ?";
         $parametros = [$codigo];
@@ -151,9 +121,6 @@ class Incidencia {
         }
     }
 
-    /**
-     * Método estático para leer todas las incidencias
-     */
     public static function leeTodasIncidencias() {
         $sql = "SELECT * FROM INCIDENCIA";
         
@@ -173,24 +140,15 @@ class Incidencia {
         }
     }
 
-    /**
-     * Método estático para obtener el número de incidencias pendientes
-     * Usa la variable estática en lugar de consultar la base de datos
-     */
     public static function getPendientes() {
         return self::$pendientes;
     }
 
-    /**
-     * Método para obtener el código de la incidencia
-     */
+
     public function getCodigo() {
         return $this->codigo;
     }
 
-    /**
-     * Método para convertir la incidencia a string
-     */
     public function __toString() {
         $string = "Incidencia {$this->codigo} - Puesto: {$this->puesto} - {$this->problema} - Estado: {$this->estado}";
         if (!empty($this->resolucion)) {
@@ -201,23 +159,14 @@ class Incidencia {
         return $string;
     }
 
-    /**
-     * Get the value of estado
-     */ 
     public function getEstado() {
         return $this->estado;
     }
 
-    /**
-     * Set the value of estado
-     * Actualiza el contador de pendientes si es necesario
-     */ 
     public function setEstado($estado) {
-        // Si cambia de abierta a otra cosa, decrementar pendientes
         if ($this->estado === "abierta" && $estado !== "abierta") {
             self::$pendientes--;
         }
-        // Si cambia de otra cosa a abierta, incrementar pendientes
         else if ($this->estado !== "abierta" && $estado === "abierta") {
             self::$pendientes++;
         }
@@ -225,44 +174,27 @@ class Incidencia {
         $this->estado = $estado;
     }
 
-    /**
-     * Get the value of puesto
-     */ 
     public function getPuesto() {
         return $this->puesto;
     }
 
-    /**
-     * Set the value of puesto
-     */ 
     public function setPuesto($puesto) {
         $this->puesto = $puesto;
     }
 
-    /**
-     * Get the value of problema
-     */ 
     public function getProblema() {
         return $this->problema;
     }
 
-    /**
-     * Set the value of problema
-     */ 
     public function setProblema($problema) {
         $this->problema = $problema;
     }
 
-    /**
-     * Get the value of resolucion
-     */ 
+
     public function getResolucion() {
         return $this->resolucion;
     }
 
-    /**
-     * Set the value of resolucion
-     */ 
     public function setResolucion($resolucion) {
         $this->resolucion = $resolucion;
     }

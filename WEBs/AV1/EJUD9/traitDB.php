@@ -6,10 +6,7 @@ trait traitDB
     public static function connectDB()
     {
         try {
-            //crea conexion a la base de datos
             $conn = new PDO("mysql:host=" . HOST . ";dbname=INCIDENCIAS", USERNAME, PASSWORD);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Conexión fallida: " . $e->getMessage());
         }
@@ -19,7 +16,6 @@ trait traitDB
 
     public function execDB($sql)
     {
-        //usa la conexion, ejecuta la sentencia y devuelve el numero de filas afectadas
         $conn = self::connectDB();
         $filas = $conn->exec($sql);
         return $filas;
@@ -27,11 +23,10 @@ trait traitDB
 
     public static function queryPreparadaDB($sql, $parametros)
     {
-        //usa la conexion, prepara la sentencia, la ejecuta con los parametros y devuelve el resultado con todas las filas del conjunto
         $conn = self::connectDB();
         $stmt = $conn->prepare($sql);
         $stmt->execute($parametros);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
         return $result;
     }
 
